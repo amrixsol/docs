@@ -1,97 +1,87 @@
 ---
 title: "Introduction"
-description: "Welcome to the new home for your documentation"
+sidebarTitle: "Introduction"
+description: "Welcome to Karma Documentation"
+mode: "wide"
 ---
 
-## Setting up
+<style>
+{`
+  .card-link, .card-link:hover, .card-link:visited, .card-link:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    border: none !important;
+  }
+  
+  .hero-content h1 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  .hero-content p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+`}
+</style>
 
-Get your documentation site up and running in minutes.
+<div className="relative w-full h-screen sm:h-[70vh] overflow-hidden">
+  {/* Video Background - Fixed positioning to ensure it stays in background */}
+  <div className="absolute inset-0 w-full h-full -z-10">
+    <iframe
+      className="w-full h-full pointer-events-none"
+      src="https://customer-n0noevuwva7213vx.cloudflarestream.com/c7e0bcb052b1f5be21fff3d3a907b63c/iframe?autoplay=true&muted=true&loop=true&controls=false"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      frameBorder="0"
+      style={{ objectFit: 'cover', objectPosition: 'center' }}
+    ></iframe>
+  </div>
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+  {/* Dimmed Overlay with Noise Texture */}
+  <div 
+    className="absolute inset-0 bg-black/40 pointer-events-none -z-5"
+    style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E")`,
+      mixBlendMode: 'overlay'
+    }}
+  ></div>
 
-## Make it yours
+  {/* Content Overlay - Positive z-index to ensure it's on top */}
+  <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+    <div className="max-w-3xl mx-auto hero-content">
+      <div className="w-full flex justify-center">
+        <h1 noAnchor className="text-4xl md:text-6xl font-bold text-white mb-4 text-center">Welcome to Karma</h1>
+      </div>
+      {/* Subtitle */}
+      <p className="text-lg md:text-xl text-white/90 mb-8 text-center">
+        IBANS, Routing Numbers & Cards, in one wallet.
+      </p>
 
-Design a docs site that looks great and empowers your users.
+      {/* Action Cards Grid */}
+      <div className="max-w-2xl mx-auto">
+        <Columns cols={2}>
+          <Card title="What is Karma Pay?" href="/what-is-karma">
+            About the platform, and why we built it.
+          </Card>
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+          <Card title="What is $KARMA?" href="/what-is-karma-token">
+            Understanding Karma's native token.
+          </Card>
 
-## Create beautiful pages
+          <Card title="How it works" href="/creating-a-karma-account">
+            Begin interacting with Karma Rails.
+          </Card>
 
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+          <Card title="Contact & Support" href="https://t.me/karmawallet">
+            Get in touch.
+          </Card>
+        </Columns>
+      </div>
+    </div>
+  </div>
+</div>

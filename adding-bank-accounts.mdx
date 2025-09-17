@@ -1,0 +1,35 @@
+---
+title: "Adding bank accounts"
+sidebarTitle: "Adding bank accounts"
+description: "Connect your existing bank accounts to the Karma platform"
+---
+
+Connect a personal bank account so you can withdraw USDC to EUR or USD. We use Bridge to verify and validate bank details; you stay in self‑custody and we never store banking credentials.
+
+## What we support
+
+- **EU (SEPA)** - Link an IBAN account for EUR payouts
+- **US (ACH/wire)** - Link a routing + account number for USD payouts
+- Other corridors are planned
+
+## Link a bank account (in app)
+
+1. Go to "Bank accounts" in the dashboard and select "Add"
+2. Choose region (EU or US) and enter your bank details
+3. Complete Bridge verification (may include micro‑deposits in the US)
+4. Confirm the last 4 digits and save
+
+Once linked, you can withdraw USDC to your bank from the "Withdraw" flow.
+
+## Security & compliance
+
+- Verification handled by Bridge; we never store bank passwords
+- Only masked details are shown in app (e.g., last 4)
+- Additional checks or proof of address may be requested by Bridge depending on region
+
+## Developers
+
+Public APIs for linking external accounts are planned. Today, account linking happens inside the app.
+
+
+
