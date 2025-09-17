@@ -34,6 +34,11 @@
           "fees",
           "support"
         ]
+      },
+      {
+        "group": "Developers",
+        "icon": "code",
+        "pages": ["developers"]
       }
     ]
   },
