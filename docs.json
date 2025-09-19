@@ -32,6 +32,9 @@
           "withdrawing-usdc-to-banks",
           "depositing-eur-in-your-phantom-wallet",
           "supported-countries",
+          "supported-documents",
+          "proof-of-address-requirements",
+          "individuals-onboarding",
           "fees",
           "support"
         ]
