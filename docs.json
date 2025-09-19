@@ -31,12 +31,19 @@
           "creating-iban-for-your-phantom-wallet",
           "withdrawing-usdc-to-banks",
           "depositing-eur-in-your-phantom-wallet",
+          "fees",
+          "support"
+        ]
+      },
+      {
+        "group": "Compliance",
+        "icon": "shield-check",
+        "expanded": true,
+        "pages": [
           "supported-countries",
           "supported-documents",
           "proof-of-address-requirements",
-          "individuals-onboarding",
-          "fees",
-          "support"
+          "individuals-onboarding"
         ]
       },
       {
