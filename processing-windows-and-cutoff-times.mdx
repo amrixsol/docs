@@ -1,0 +1,23 @@
+---
+title: "Processing windows & cutoff times"
+sidebarTitle: "Processing & cutoff times"
+description: "Banking-day access windows and settlement expectations for fiat rails"
+---
+
+## Fiat rails
+
+We access fiat rails on banking days during banking hours. Cutoffs and typical settlement times:
+
+| Currency | Rail | Cutoff (ET) | Settlement Time | Notes |
+| :-- | :-- | :-- | :-- | :-- |
+| USD | Next Day ACH | 1:00 PM | 8:30 AM next business day | Batches submitted at 1:00 PM ET daily. Post‑cutoff, processed next day. Funds typically land in 1–2 business days. |
+| USD | Same Day ACH | 9:30 AM, 1:45 PM, 3:45 PM | 1:00 PM, 5:00 PM, 6:00 PM same day | Same‑day settlement at receiving bank; availability depends on that bank. |
+| USD | Wire | 4:45 PM | ~1 hour after sending | Transactions after 4:45 PM ET are sent next business day. |
+| EUR | SEPA Instant | N/A | <30 seconds | 24/7/365; requires beneficiary bank support. |
+| EUR | SEPA Credit | 9:00 AM | 1–2 business days | Used for transactions > €100K. |
+
+## Onramps (fiat to crypto)
+
+Typically sent within minutes of fiat landing in our bank account.
+
+

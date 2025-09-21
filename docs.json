@@ -31,6 +31,13 @@
           "creating-iban-for-your-phantom-wallet",
           "withdrawing-usdc-to-banks",
           "depositing-eur-in-your-phantom-wallet",
+          {
+            "group": "Operations",
+            "pages": [
+              "processing-windows-and-cutoff-times",
+              "us-banking-holidays"
+            ]
+          },
           "fees",
           "support",
           "faq"
