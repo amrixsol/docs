@@ -8,6 +8,174 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## January 25, 2026
+
+### 🌍 KYC Country Selection Updates
+
+We've updated the list of available countries in our identity verification flow to better reflect supported regions. The country selection UI now accurately displays only the jurisdictions where Karma card services are currently available, providing a cleaner onboarding experience.
+
+### 🔐 Authentication Screen Improvements
+
+The authentication screen now correctly distinguishes between new sign-ups and returning users. Previously, new users would sometimes see "Welcome back" messaging during their first registration—this has been resolved to ensure the right welcome experience for everyone.
+
+### 👤 Name Information Now Saves Correctly
+
+Fixed an issue where user names weren't being saved during the card verification process. This caused some users to see "Card Holder" instead of their actual name when viewing card details. Names are now properly persisted and existing affected users will have their information automatically synced.
+
+### 🔄 KYC Rejection Handling
+
+Added comprehensive support for handling identity verification rejections and denials. Users whose applications were previously declined can now start fresh applications without getting stuck in error states. The system properly clears old verification data and provides clear messaging about next steps.
+
+### ⚡ Infrastructure Upgrade for Scale
+
+We've upgraded our Turnkey wallet infrastructure to support 100,000+ users with improved reliability and performance. This upgrade ensures Karma can continue to scale while maintaining fast and secure wallet operations for all users.
+
+### 💰 Karma Sponsors All On-Chain Fees
+
+Karma now covers all Solana transaction fees, rent costs, and token account creation fees on behalf of users. This means you no longer need SOL in your wallet to perform transfers—Karma handles all blockchain costs so you can focus on using your funds without worrying about gas fees.
+
+---
+
+## January 24, 2026
+
+### 💵 Amount Handling Standardization
+
+Updated our backend to handle amounts in dollars instead of cents, simplifying calculations and reducing potential conversion errors. This change ensures consistent amount handling across all API endpoints and improves accuracy in transaction processing.
+
+### 🔗 PDA Support for Rain Deposit Addresses
+
+Added support for Program Derived Addresses (PDAs) for Rain deposit addresses. This enhancement enables more flexible on-chain deposit routing and improves compatibility with Solana's account model for card funding operations.
+
+### ⚡ Faster Card Authorization
+
+Optimized card authorization speed by shifting the source of truth to on-chain data powered by Helius. Card transactions now verify balances directly from the blockchain in real-time, resulting in faster approval times and more reliable authorization decisions.
+
+### 💳 Card Wallet Withdrawal Endpoints
+
+Added withdrawal endpoints for the card-linked wallet, enabling users to move funds from their card wallet back to their main wallet or external addresses. This provides greater flexibility in managing card balances and gives users full control over their funds.
+
+---
+
+## January 22, 2026
+
+### 🎯 KYC Flow User Experience Upgrade
+
+We've upgraded the identity verification flow with improved user experience and smoother transitions. The flow now guides users more clearly through each step of the verification process, reducing confusion and drop-off rates.
+
+### 🗓️ Birthdate Validation Fix
+
+Fixed a bug with birthdate validation during the KYC process. Users can now enter their date of birth without encountering validation errors, ensuring a smoother onboarding experience.
+
+### 📝 Agreement Flow Redesign
+
+Redesigned the terms and agreements flow in the mobile app with a cleaner, more intuitive interface. Users can now review and accept required agreements with improved readability and a more professional presentation.
+
+### ✅ Card Creation Success State
+
+Added a dedicated success state for the card creation flow, providing clear visual confirmation when a user's card has been successfully created. This gives users confidence that their card is ready to use.
+
+### 🔢 In-App PIN Management
+
+Integrated PIN management directly into the mobile app. Users can now view and manage their card PIN without leaving the app, providing a more seamless and secure experience for card security management.
+
+### ✨ Wallet Creation Animations
+
+Added smooth animations during the wallet creation flow, providing visual feedback as users set up their wallets. These animations make the process feel more polished and help users understand that their wallet is being securely created.
+
+---
+
+## January 20, 2026
+
+### 🍎 Mobile App Submitted to Apple TestFlight
+
+The Karma mobile app has been reviewed and approved by all partners and teams, and has been officially submitted to Apple for TestFlight publishing. The app is now ready to be used with Apple Wallet, bringing seamless card management to iOS users.
+
+### 🔒 Security Optimizations & Production APIs
+
+We've implemented various security optimizations in our backend handling and upgraded all APIs from testnet to production environments. This marks an important milestone as we prepare for broader user access with production-grade infrastructure.
+
+---
+
+## January 18, 2026
+
+### 💳 Rain Cards Fully Integrated
+
+We've completed the full integration of Rain Cards into our mobile application, including comprehensive testing of all card functionality. Users can now apply for, manage, and use their Karma cards directly within the mobile app with a seamless native experience.
+
+### 📱 Mobile App Ready for TestFlight
+
+The Karma mobile app has reached feature completion and is now ready for review and TestFlight submission. This represents months of development work culminating in a polished, production-ready mobile experience for our users.
+
+---
+
+## January 14, 2026
+
+### 📜 Card Terms Published
+
+We've published our official [Karma Spend Card Terms](https://www.karmapay.xyz/card-terms), providing complete transparency on card usage, fees, dispute resolution, and user rights. These terms outline everything you need to know about using your Karma card.
+
+### 🔐 Turnkey Wallet Infrastructure
+
+Integrated Turnkey's secure wallet infrastructure into Karma's user experience and mobile app. This provides institutional-grade key management and signing capabilities while maintaining a seamless user experience. Users get the security of self-custody without the complexity.
+
+### ⛓️ Helius Integration for On-Chain Experience
+
+Integrated Helius to power real-time on-chain data and transactions within our mobile UI. This enables accurate balance updates, transaction tracking, and a truly seamless blockchain experience without users needing to understand the underlying technology.
+
+---
+
+## January 9, 2026
+
+### 📱 Mobile App Beta Frontend Launch
+
+Published the frontend for our beta testing environment, including the core mobile application experience. This release features the main navigation system, home screen with balance overview, profile management screen, and the complete wallet flow for viewing and managing crypto assets.
+
+---
+
+## January 5, 2026
+
+### 📋 Privacy Policy Updated
+
+Published a comprehensive update to our [Privacy Policy](https://www.karmapay.xyz/privacy), detailing how we collect, use, and protect user data. The updated policy includes enhanced disclosures for UK and EU residents under GDPR and provides clarity on data sharing with our banking and card partners.
+
+### 🚫 Prohibited Activities Published
+
+Published our [Prohibited Activities](https://www.karmapay.xyz/prohibited-activities) list, clearly outlining activities that are not permitted when using Karma services. This helps ensure compliance and protects our community from misuse of the platform.
+
+### ✍️ E-Sign Consent Published
+
+Published our [E-Sign & Electronic Communications Notice](https://www.karmapay.xyz/esign-consent), enabling users to receive all legal disclosures and communications electronically. This streamlines the onboarding process while ensuring full legal compliance.
+
+### 📄 Terms of Service Updated
+
+Additional updates to our Terms of Service to reflect new features and ensure alignment with our card program requirements and partner agreements.
+
+---
+
+## January 2, 2026
+
+### 🐋 Inner Circle Requirements Updated to 5M
+
+Following a unanimous decision by our whale holders, we've updated the [Inner Circle](https://www.karmapay.xyz/innercircle) requirements from 3M to 5M \$KARMA (representing 0.5% of total supply). This exclusive group continues to shape Karma's direction through direct governance participation and early access to new features.
+
+---
+
+## December 30, 2025
+
+### 📄 Terms of Service Published
+
+Published a new version of our [Terms of Service](https://www.karmapay.xyz/terms), establishing the legal framework for using Karma's services. These terms cover account usage, card services, dispute resolution, and user responsibilities.
+
+### 📱 Mobile App Onboarding Experience
+
+Completed significant updates to the user experience for the card onboarding flow in our beta mobile app. The new flow provides clearer guidance through identity verification, card application, and activation steps.
+
+### 🎨 Mobile App Design Finalized
+
+Completed the final design details for our mobile application, establishing the visual language and interaction patterns that will define the Karma mobile experience. The design system follows our high-end aesthetic with attention to every detail.
+
+---
+
 ## December 27, 2025
 
 ### ✓ Bank Verification & Microdeposit Tracking
