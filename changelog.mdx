@@ -10,6 +10,18 @@ All updates and announcements in one place. We're building towards a community p
 
 ## January 31, 2026
 
+### 💳 Card Fee Collection & ATM Support
+
+Implemented an updated fee collection mechanism for Karma card transactions, covering pass-through costs and service fees. Fees are automatically calculated and collected alongside each transaction without impacting authorization speed. Additionally, ATM transactions are now supported with applicable fees instead of being blocked outright.
+
+### ⚖️ Dispute Handling
+
+Added support for card transaction disputes via webhook integration with our card issuer. When a dispute is filed, it is automatically tracked in our system and processed accordingly.
+
+### 💰 Refund Balance Crediting
+
+Completed refund transactions now automatically credit the user's card wallet balance. Per card network rules, only fully settled refunds trigger a balance update—pending refunds are held until settlement is confirmed.
+
 ### 🎨 Welcome Screen Redesign
 
 The welcome screen has been refreshed with a new visual design, delivering a more polished first impression when you open the app.
