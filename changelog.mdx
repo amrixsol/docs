@@ -8,6 +8,26 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## February 2, 2026
+
+### 🛡️ Refund Fraud Detection & Auto-Block
+
+Added an automated fraud detection system that validates refund transactions against user spend history. If a refund arrives from a merchant the user has never transacted with across any of their cards, the refund is declined, the card is automatically frozen, and the account is flagged for review. Fraud-blocked cards cannot be unfrozen by the user and withdrawals are disabled until support resolves the case.
+
+### 🔔 Smarter Push Notifications
+
+Push notifications are now richer and more actionable. Tapping a transaction notification takes you directly to the transaction detail screen. Foreground notifications display type-appropriate toasts—spend and refund notifications show the transaction amount, declines show an error alert, and top-ups show a success confirmation. On Android, notifications are now routed to dedicated channels (Card Transactions and Security Alerts) so users can customize their notification preferences.
+
+### ⚡ Instant Balance Feedback
+
+Top-up and withdrawal actions now update the displayed card balance instantly instead of waiting for on-chain confirmation. The UI optimistically reflects the new balance immediately after a successful action, with a background reconciliation against the blockchain a few seconds later.
+
+### 🔔 Accurate Notification Balances
+
+The balance shown in card transaction push notifications now reflects the correct post-transaction amount. Previously, the notification could show the balance before the transaction was deducted due to a timing issue with cached balance reads.
+
+---
+
 ## January 31, 2026
 
 ### 💳 Card Fee Collection & ATM Support
