@@ -8,7 +8,39 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## February 3, 2026
+
+### 👁️ Hide Balance Toggle
+
+Added a privacy-first balance toggle on the Home Screen. Tap the eye icon next to "Available Balance" to hide your balance from prying eyes. The hidden state displays a clean `$••••••` (Robinhood-style) and persists across app sessions.
+
+### 📋 Copy User ID
+
+Your User ID is now easily copyable in Account Settings. Tap the row to copy the full ID to your clipboard with haptic feedback and a confirmation toast. Useful for support requests and debugging.
+
+### 🖼️ Merchant Logos on Declined Transactions
+
+Declined card transactions now display the merchant's logo instead of a generic red X icon. The transaction status is still clearly marked as declined, but you can now see which merchant the transaction was with at a glance.
+
+### 🏪 New Merchant Logos
+
+Added logo support for GoDaddy, Vercel, and Super Pharm.
+
+---
+
 ## February 2, 2026
+
+### ⚡ 3.5x Faster Card Authorization
+
+Reduced card authorization latency from ~700ms to ~200ms by combining multiple database queries into a single optimized call. This eliminates webhook timeouts that previously caused declined transactions, resulting in a smoother and more reliable payment experience at checkout.
+
+### 🔓 Scalable Wallet Infrastructure
+
+Upgraded our wallet creation system to support unlimited users by switching to a sub-organization architecture. New users are no longer affected by per-organization wallet limits, ensuring seamless onboarding as we scale.
+
+### 🔍 Country Search on Signup
+
+Added a search bar to the country selection screen during onboarding. Users can now quickly find their country of residence by typing instead of scrolling through a long list.
 
 ### 🛡️ Refund Fraud Detection & Auto-Block
 
