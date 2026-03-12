@@ -8,6 +8,226 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## March 12, 2026
+
+### 🏠 Home Screen Redesign
+
+Rebuilt the home screen with a cleaner, more modern layout. The balance hero is now centered with larger typography, and a new top bar shows your avatar initial alongside the balance visibility toggle. The screen now features a Holdings/Activity tab toggle with smooth crossfade transitions, letting you switch between your portfolio and recent transactions without leaving the home screen.
+
+### 📊 Activity Feed with Token Logos
+
+The activity feed now displays actual token logos instead of generic arrow icons. Each transaction shows the token involved with a micro badge overlay indicating the action type (send, receive, swap). This makes it significantly easier to identify transactions at a glance.
+
+### 🔔 Real-Time On-Ramp Telegram Alerts
+
+Bridge on-ramp events now send instant Telegram notifications when funds are received or crypto is delivered. Each alert includes the user, amount, payment rail, and a full fee breakdown showing the developer fee, Bridge cost, and net revenue.
+
+---
+
+## March 11, 2026
+
+### 🔄 Full-Screen Swap Redesign
+
+The swap screen has been completely rebuilt with a full-screen layout, better spacing between amount cards, fee strip, percentage pills, and the numeric keypad. Token amounts now display with full precision using comma formatting instead of abbreviated K/M suffixes, and USD values on the receive card are correctly derived from the input amount.
+
+### 🪙 Token Picker Upgrade
+
+The token selection screen in swaps has been redesigned to match the premium design language used throughout the app. It now features staggered entrance animations, larger token icons, compact horizontal chips for popular tokens, Jupiter verification badges, and a truncated contract address preview on each row so users can verify they're selecting the correct token.
+
+### 🔐 Silent Signing with Face ID Sessions
+
+Transactions no longer require Face ID for every single swap or send. A signing session is created on your first transaction, and subsequent operations within the session are signed silently. This dramatically reduces friction when making multiple trades. The session implementation has been hardened against edge cases with automatic fallback to passkey signing when needed.
+
+### 💸 Instant Cashback Credits
+
+$KARMA cashback tokens are now credited to your account immediately after each eligible transaction instead of waiting for the next buyback cron cycle. This makes the rewards experience feel instant and tangible.
+
+### 📈 Portfolio P/L Accuracy
+
+Profit and loss calculations now correctly exclude deposits and withdrawals, so topping up your account no longer inflates your reported gains. Staked KARMA tokens are also included in the total portfolio value for an accurate net worth view.
+
+---
+
+## March 10, 2026
+
+### 💸 Revolut-Style Send Screen
+
+Introduced a completely new send flow inspired by Revolut's UX. You can now send to wallet contacts or bank accounts from a unified recipient picker. The flow includes a polished amount entry screen, success states, and empty state handling. Bank off-ramps are integrated directly into the send flow with real bank logos displayed alongside each account.
+
+### 🔀 Multi-Token Swap Support
+
+Swaps now support any Solana token, not just USDC. You can pay with SOL or any token in your portfolio, and the BuySheet intelligently auto-selects the best token to pay with based on your balances. The minimum swap amount has been lowered from $5 to $1.
+
+### 📥 Universal Receive
+
+The receive modal now accepts all Solana tokens, not just USDC. It includes a share button so you can easily send your wallet address to others.
+
+### 💳 Card Spending Limits Fix
+
+Fixed a bug where card spending limits were being sent to our card issuer in the wrong unit (dollars instead of cents), which could result in incorrect transaction limits. Monthly spending display in the app has also been corrected.
+
+---
+
+## March 9, 2026
+
+### 🥩 $KARMA Staking System
+
+Launched a full staking system for $KARMA tokens. Staking upgrades your reward tier, unlocking higher cashback percentages and reduced trading fees. The staking modal displays a clear tier benefits table so you can see exactly what each level unlocks. Staked tokens appear as a separate row in your portfolio with a "Staked" badge and are included in your total balance.
+
+### 🏆 Rewards Tab & Karma Points
+
+Added a dedicated Rewards tab with Karma Points display, tier progression tracking, and a claim flow. You earn KP from card spending and swaps, with retroactive credit for all historical transactions. The claim UX includes haptic feedback, pulse animations, and a success screen. Cashback accrues on every swap and is displayed in the rewards hero section.
+
+### 📊 Transaction Detail Redesign
+
+Transaction detail screens have been redesigned with a clean hero section and inline pricing breakdown. Each transaction now shows the actual KP earned (including any boost multiplier) instead of just the base amount.
+
+### 🔧 Daily Business Digest
+
+The daily Telegram digest now includes comprehensive revenue metrics: on-ramp and off-ramp volume with fee breakdowns, swap volume, card transaction revenue, KARMA pool LP fees, cashback costs, and total profit calculations. LP revenue from the Meteora DLMM pool is tracked automatically.
+
+---
+
+## March 8, 2026
+
+### ⚙️ Automated Treasury Operations
+
+Deployed a fully automated treasury pipeline. Operational wallets (gas sponsor, card fee, rewards) are automatically topped up from the Believe fee wallet when balances run low. KARMA token liquidation is handled via Meteora DLMM LP positions, and excess SOL from the LP wallet is swept back into the pipeline. Health monitoring crons track all wallet balances and alert on anomalies.
+
+### 🔒 Biometric App Lock
+
+Added biometric app lock that automatically enables after passkey migration. The lock screen displays your name as a greeting and requires Face ID or Touch ID to access the app. The lock correctly handles session refreshes without re-triggering authentication.
+
+---
+
+## March 7, 2026
+
+### 👤 Profile Page with Portfolio Chart
+
+Redesigned the profile page to include a portfolio value chart with switchable timeframes (1D, 1W, 1M, 3M, All). The page now shows your portfolio P/L at a glance, and the chart correctly handles new users who don't yet have historical data.
+
+### 🎨 P/L Performance Card
+
+Added a shareable P/L performance card modal that shows your portfolio performance alongside top movers in your holdings. Long-pressing any asset row triggers a scale animation with haptic feedback for a premium feel.
+
+---
+
+## March 6, 2026
+
+### 🔑 Non-Custodial Wallet Migration
+
+Users can now migrate their main wallet to a non-custodial passkey-based setup. This means your wallet is secured by your device's biometric authentication and no one—including Karma—can access your funds without your explicit approval. A wallet private key export screen has been added for full transparency and self-custody disclosure.
+
+### 🎨 Icon System Migration
+
+Migrated all icons across 27 files from Ionicons to Phosphor, delivering a more consistent and modern visual language throughout the entire app.
+
+### 🌍 On-Ramp Fee Adjustments
+
+On-ramp developer fees have been adjusted to 1% globally, with a 4% rate for users in Argentina to account for higher local payment processing costs. These fees are clearly communicated during the deposit flow.
+
+---
+
+## March 5, 2026
+
+### ⚡ Optimistic Balance Updates
+
+Swap and trade actions now update your displayed balance optimistically, meaning you see the new balance immediately after a successful transaction rather than waiting for on-chain confirmation. This makes the app feel significantly more responsive.
+
+### 🌐 KYC Name Transliteration
+
+Fixed an issue where users with non-Latin characters in their names (such as accented characters or Cyrillic) would fail Bridge KYC verification. Names are now automatically transliterated to ASCII-safe equivalents before being submitted.
+
+---
+
+## March 3, 2026
+
+### 🔀 Jupiter Ultra Swap Migration
+
+Migrated the swap engine from Jupiter Metis to the new Jupiter Ultra API, delivering faster and more reliable quotes. For tokens that Ultra doesn't support (such as newer meme coins), the system automatically falls back to Jupiter V6 with gasless execution—Karma's treasury pays the gas fee on behalf of the user. A dynamic fee structure ensures a minimum fee of $0.45 per swap, with the standard rate set at 0.5%.
+
+### 📈 Live Price Updates
+
+Token detail screens now show live price updates with 5-second polling via GeckoTerminal. Price changes flash green or red in real time, and the chart updates live as new data arrives. Trade history is displayed in a clean table layout with 10-second polling.
+
+### 🏷️ DEX Platform Badges
+
+Token detail pages now show which decentralized exchange provides liquidity for each token (Raydium, Meteora, Orca, or PumpSwap). Badges use official platform logos and appear on both the token detail hero and the trending tokens list.
+
+---
+
+## March 1, 2026
+
+### 🔍 Explore Tab
+
+Replaced the Transfer tab with a new Explore tab for discovering tokens. The idle state shows trending tokens in a DexScreener-style layout with rank numbers, price change badges, and market cap. Searching displays results with prices, market cap, and Jupiter verification status. Live prices update with flash animations as they change.
+
+### 📄 Token Detail Page
+
+Added a comprehensive token detail page with tabbed sections for Info, Trades, and Holders. The Info tab pulls descriptions from CoinGecko with DexScreener fallback, and displays key metrics like market cap (cross-checked against Jupiter for accuracy), 24h volume, and liquidity. Top holders and recent trades are fetched on-chain. Stablecoins correctly skip the price chart since OHLCV data returns the paired token price instead.
+
+### 💼 Portfolio Display Improvements
+
+Home screen asset rows now show the token amount alongside the dollar value, with colored percentage change badges. The portfolio total balance is displayed prominently, and token icons gracefully fall back to a letter avatar when images fail to load.
+
+---
+
+## February 27, 2026
+
+### 🎨 Premium UI Redesign
+
+Rolled out a comprehensive visual refresh across all screens in the mobile app. The redesign covers the swap screen, account settings, wallet export, and card transaction lists—bringing a consistent premium aesthetic with refined spacing, typography, and component styling throughout the entire experience.
+
+### 🛡️ Profile Setup Gating for KYC
+
+Users who haven't completed their profile (name and residency) are now guided through a setup screen before initiating Bridge KYC. This prevents incomplete data from causing verification failures and creates a smoother onboarding flow.
+
+### 🔑 Wallet Export Screen
+
+Added a dedicated screen for exporting your wallet's private key, giving non-custodial users full access to their keys for backup or use in external wallets.
+
+---
+
+## February 26, 2026
+
+### 🤖 Internal CS Agent API
+
+Added a narrow internal API that allows our customer support agent to update specific KYC profile fields on behalf of users. This reduces manual database operations and speeds up support resolution for users who need profile corrections.
+
+### 🌍 Supported Countries Update
+
+Added Tunisia to the supported countries list and blocked Guinea-Bissau to comply with updated Bridge requirements. Country code handling for KYC endorsements now correctly accepts alpha-2 codes across all flows.
+
+---
+
+## February 23, 2026
+
+### 🔐 Web App Authentication Redesign
+
+The web app sign-in and sign-up pages have been redesigned with a dark mode glassmorphic UI and smooth Framer Motion animations, delivering a more polished first impression that matches the premium feel of the mobile app.
+
+---
+
+## February 21, 2026
+
+### 🌐 Landing Page Refresh
+
+Updated the Karma landing page with animated Figma components replacing static card images, floating transaction chips on the mobile hero, and optimized layouts for both desktop and mobile viewports. CTA buttons now direct users to the web app for a more seamless onboarding path.
+
+### 💳 Inactive Card Management
+
+Cards that have been inactive for an extended period are now automatically deactivated with a push notification nudging the user to reactivate. The card lock mechanism has been upgraded to use Rain's current PATCH API instead of the legacy freeze endpoint.
+
+### 🏦 Dynamic Merchant Logos
+
+Merchant logos for card transactions are now loaded dynamically from Supabase instead of being hardcoded. This allows new merchant logos to be added without requiring an app update.
+
+### 💰 On-Chain Fee Collection for Bill Pay
+
+Off-ramp fees for bill pay transfers are now collected on-chain instead of through Bridge's developer fee mechanism, giving us more control and transparency over the fee structure.
+
+---
+
 ## February 20, 2026
 
 ### ✨ Lottie Animations Across Web App
