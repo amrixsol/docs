@@ -32,11 +32,11 @@ The token selection screen in swaps has been redesigned to match the premium des
 
 ### 🔐 Silent Signing with Face ID Sessions
 
-Transactions no longer require Face ID for every single swap or send. A signing session is created on your first transaction, and subsequent operations within the session are signed silently. This dramatically reduces friction when making multiple trades. The session implementation has been hardened against edge cases with automatic fallback to passkey signing when needed.
+Transactions no longer require Face ID for every single swap or send. A signing session is created on your first transaction, and subsequent operations within the session are signed silently. This dramatically reduces friction when making multiple trades. The session implementation has been hardened against edge cases to ensure signing always works reliably.
 
 ### 💸 Instant Cashback Credits
 
-$KARMA cashback tokens are now credited to your account immediately after each eligible transaction instead of waiting for the next buyback cron cycle. This makes the rewards experience feel instant and tangible.
+$KARMA cashback tokens are now credited to your account immediately after each eligible transaction. This makes the rewards experience feel instant and tangible.
 
 ### 📈 Portfolio P/L Accuracy
 
@@ -82,9 +82,9 @@ Transaction detail screens have been redesigned with a clean hero section and in
 
 ## March 8, 2026
 
-### ⚙️ Automated Treasury Operations
+### ⚙️ Automated Operations
 
-Deployed automated infrastructure to keep operational wallets funded and healthy. Wallet balances are continuously monitored with alerts on anomalies, ensuring uninterrupted service for gas sponsorship, fee collection, and rewards distribution.
+Deployed automated infrastructure to ensure all services remain funded and operational. Balances are continuously monitored with alerts on anomalies, ensuring uninterrupted service for gas sponsorship, fee processing, and rewards distribution.
 
 ### 🔒 Biometric App Lock
 
@@ -136,11 +136,11 @@ Fixed an issue where users with non-Latin characters in their names (such as acc
 
 ### 🔀 Jupiter Ultra Swap Migration
 
-Migrated the swap engine to the latest Jupiter Ultra API, delivering faster and more reliable quotes. For tokens that Ultra doesn't support (such as newer meme coins), the system automatically falls back to Jupiter V6 with gasless execution—Karma covers the gas fee on your behalf.
+Migrated the swap engine to Jupiter's latest infrastructure, delivering faster and more reliable quotes. For tokens that aren't supported on the primary route, the system automatically finds an alternative path—all gasless, with Karma covering fees on your behalf.
 
 ### 📈 Live Price Updates
 
-Token detail screens now show live price updates with 5-second polling via GeckoTerminal. Price changes flash green or red in real time, and the chart updates live as new data arrives. Trade history is displayed in a clean table layout with 10-second polling.
+Token detail screens now show live price updates that refresh automatically. Price changes flash green or red in real time, and the chart updates live as new data arrives. Trade history is displayed in a clean, real-time table layout.
 
 ### 🏷️ DEX Platform Badges
 
@@ -152,11 +152,11 @@ Token detail pages now show which decentralized exchange provides liquidity for 
 
 ### 🔍 Explore Tab
 
-Replaced the Transfer tab with a new Explore tab for discovering tokens. The idle state shows trending tokens in a DexScreener-style layout with rank numbers, price change badges, and market cap. Searching displays results with prices, market cap, and Jupiter verification status. Live prices update with flash animations as they change.
+Replaced the Transfer tab with a new Explore tab for discovering tokens. The idle state shows trending tokens with rank numbers, price change badges, and market cap. Searching displays results with prices, market cap, and verification status. Live prices update with flash animations as they change.
 
 ### 📄 Token Detail Page
 
-Added a comprehensive token detail page with tabbed sections for Info, Trades, and Holders. The Info tab pulls descriptions from CoinGecko with DexScreener fallback, and displays key metrics like market cap (cross-checked against Jupiter for accuracy), 24h volume, and liquidity. Top holders and recent trades are fetched on-chain. Stablecoins correctly skip the price chart since OHLCV data returns the paired token price instead.
+Added a comprehensive token detail page with tabbed sections for Info, Trades, and Holders. The Info tab displays a token description alongside key metrics like market cap, 24h volume, and liquidity. Top holders and recent trades are fetched on-chain for full transparency.
 
 ### 💼 Portfolio Display Improvements
 
@@ -212,7 +212,7 @@ Cards that have been inactive for an extended period are now automatically deact
 
 ### 🏦 Dynamic Merchant Logos
 
-Merchant logos for card transactions are now loaded dynamically from Supabase instead of being hardcoded. This allows new merchant logos to be added without requiring an app update.
+Merchant logos for card transactions are now loaded dynamically instead of being hardcoded. This allows new merchant logos to be added without requiring an app update.
 
 ### 💰 Improved Fee Transparency
 
@@ -421,7 +421,7 @@ Implemented an updated fee collection mechanism for Karma card transactions, cov
 
 ### ⚖️ Dispute Handling
 
-Added support for card transaction disputes via webhook integration with our card issuer. When a dispute is filed, it is automatically tracked in our system and processed accordingly.
+Added support for card transaction disputes. When a dispute is filed, it is automatically tracked in our system and processed accordingly.
 
 ### 💰 Refund Balance Crediting
 
@@ -513,7 +513,7 @@ You can now move funds from your card wallet back to your main wallet or externa
 
 ### 🔧 Backend Improvements
 
-Standardized amount handling across all API endpoints and improved on-chain deposit routing for card funding operations, resulting in more accurate and reliable transaction processing.
+Standardized amount handling and improved deposit routing for card funding operations, resulting in more accurate and reliable transaction processing.
 
 ---
 
@@ -551,9 +551,9 @@ Added smooth animations during the wallet creation flow, providing visual feedba
 
 The Karma mobile app has been reviewed and approved by all partners and teams, and has been officially submitted to Apple for TestFlight publishing. The app is now ready to be used with Apple Wallet, bringing seamless card management to iOS users.
 
-### 🔒 Security Optimizations & Production APIs
+### 🔒 Security Optimizations & Production Readiness
 
-We've implemented various security optimizations in our backend handling and upgraded all APIs from testnet to production environments. This marks an important milestone as we prepare for broader user access with production-grade infrastructure.
+We've implemented various security optimizations and upgraded all services to production environments. This marks an important milestone as we prepare for broader user access with production-grade infrastructure.
 
 ---
 
@@ -575,13 +575,13 @@ The Karma mobile app has reached feature completion and is now ready for review 
 
 We've published our official [Karma Spend Card Terms](https://www.karmapay.xyz/card-terms), providing complete transparency on card usage, fees, dispute resolution, and user rights. These terms outline everything you need to know about using your Karma card.
 
-### 🔐 Turnkey Wallet Infrastructure
+### 🔐 Institutional-Grade Wallet Security
 
-Integrated Turnkey's secure wallet infrastructure into Karma's user experience and mobile app. This provides institutional-grade key management and signing capabilities while maintaining a seamless user experience. Users get the security of self-custody without the complexity.
+Integrated institutional-grade key management and signing infrastructure into the Karma mobile app. This provides the highest level of security for self-custody wallets while maintaining a seamless user experience. Your keys, your funds—without the complexity.
 
-### ⛓️ Helius Integration for On-Chain Experience
+### ⛓️ Real-Time On-Chain Experience
 
-Integrated Helius to power real-time on-chain data and transactions within our mobile UI. This enables accurate balance updates, transaction tracking, and a truly seamless blockchain experience without users needing to understand the underlying technology.
+Integrated real-time blockchain data into the mobile app. This enables accurate balance updates, instant transaction tracking, and a truly seamless experience without users needing to understand the underlying technology.
 
 ---
 
@@ -685,7 +685,7 @@ You can now update your email address directly from the Settings page. This chan
 
 ### 🔄 Transaction Reliability Improvements
 
-We've improved our transaction tracking system to ensure more accurate status updates. Transactions now properly sync with our banking partner's webhook events, and abandoned transactions are automatically cleaned up after 15 minutes. This means cleaner transaction history and more reliable status reporting across the board.
+We've improved our transaction tracking system to ensure more accurate status updates. Transactions now properly reflect real-time state changes from our banking partner, and abandoned transactions are automatically cleaned up. This means cleaner transaction history and more reliable status reporting across the board.
 
 ---
 
