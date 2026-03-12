@@ -18,10 +18,6 @@ Rebuilt the home screen with a cleaner, more modern layout. The balance hero is 
 
 The activity feed now displays actual token logos instead of generic arrow icons. Each transaction shows the token involved with a micro badge overlay indicating the action type (send, receive, swap). This makes it significantly easier to identify transactions at a glance.
 
-### 🔔 Real-Time On-Ramp Telegram Alerts
-
-Bridge on-ramp events now send instant Telegram notifications when funds are received or crypto is delivered. Each alert includes the user, amount, payment rail, and a full fee breakdown showing the developer fee, Bridge cost, and net revenue.
-
 ---
 
 ## March 11, 2026
@@ -64,7 +60,7 @@ The receive modal now accepts all Solana tokens, not just USDC. It includes a sh
 
 ### 💳 Card Spending Limits Fix
 
-Fixed a bug where card spending limits were being sent to our card issuer in the wrong unit (dollars instead of cents), which could result in incorrect transaction limits. Monthly spending display in the app has also been corrected.
+Fixed a bug where card spending limits could be set incorrectly in certain edge cases. Monthly spending display in the app has also been corrected.
 
 ---
 
@@ -82,17 +78,13 @@ Added a dedicated Rewards tab with Karma Points display, tier progression tracki
 
 Transaction detail screens have been redesigned with a clean hero section and inline pricing breakdown. Each transaction now shows the actual KP earned (including any boost multiplier) instead of just the base amount.
 
-### 🔧 Daily Business Digest
-
-The daily Telegram digest now includes comprehensive revenue metrics: on-ramp and off-ramp volume with fee breakdowns, swap volume, card transaction revenue, KARMA pool LP fees, cashback costs, and total profit calculations. LP revenue from the Meteora DLMM pool is tracked automatically.
-
 ---
 
 ## March 8, 2026
 
 ### ⚙️ Automated Treasury Operations
 
-Deployed a fully automated treasury pipeline. Operational wallets (gas sponsor, card fee, rewards) are automatically topped up from the Believe fee wallet when balances run low. KARMA token liquidation is handled via Meteora DLMM LP positions, and excess SOL from the LP wallet is swept back into the pipeline. Health monitoring crons track all wallet balances and alert on anomalies.
+Deployed automated infrastructure to keep operational wallets funded and healthy. Wallet balances are continuously monitored with alerts on anomalies, ensuring uninterrupted service for gas sponsorship, fee collection, and rewards distribution.
 
 ### 🔒 Biometric App Lock
 
@@ -124,7 +116,7 @@ Migrated all icons across 27 files from Ionicons to Phosphor, delivering a more 
 
 ### 🌍 On-Ramp Fee Adjustments
 
-On-ramp developer fees have been adjusted to 1% globally, with a 4% rate for users in Argentina to account for higher local payment processing costs. These fees are clearly communicated during the deposit flow.
+On-ramp fees have been adjusted to better reflect regional payment processing costs. Fees are clearly communicated during the deposit flow before you confirm.
 
 ---
 
@@ -144,7 +136,7 @@ Fixed an issue where users with non-Latin characters in their names (such as acc
 
 ### 🔀 Jupiter Ultra Swap Migration
 
-Migrated the swap engine from Jupiter Metis to the new Jupiter Ultra API, delivering faster and more reliable quotes. For tokens that Ultra doesn't support (such as newer meme coins), the system automatically falls back to Jupiter V6 with gasless execution—Karma's treasury pays the gas fee on behalf of the user. A dynamic fee structure ensures a minimum fee of $0.45 per swap, with the standard rate set at 0.5%.
+Migrated the swap engine to the latest Jupiter Ultra API, delivering faster and more reliable quotes. For tokens that Ultra doesn't support (such as newer meme coins), the system automatically falls back to Jupiter V6 with gasless execution—Karma covers the gas fee on your behalf.
 
 ### 📈 Live Price Updates
 
@@ -190,9 +182,9 @@ Added a dedicated screen for exporting your wallet's private key, giving non-cus
 
 ## February 26, 2026
 
-### 🤖 Internal CS Agent API
+### 🤖 Faster Support Resolution
 
-Added a narrow internal API that allows our customer support agent to update specific KYC profile fields on behalf of users. This reduces manual database operations and speeds up support resolution for users who need profile corrections.
+Customer support can now resolve profile correction requests more quickly, reducing wait times for users who need KYC profile updates.
 
 ### 🌍 Supported Countries Update
 
@@ -216,15 +208,15 @@ Updated the Karma landing page with animated Figma components replacing static c
 
 ### 💳 Inactive Card Management
 
-Cards that have been inactive for an extended period are now automatically deactivated with a push notification nudging the user to reactivate. The card lock mechanism has been upgraded to use Rain's current PATCH API instead of the legacy freeze endpoint.
+Cards that have been inactive for an extended period are now automatically deactivated with a push notification nudging the user to reactivate. This helps maintain account security and ensures only actively used cards remain open.
 
 ### 🏦 Dynamic Merchant Logos
 
 Merchant logos for card transactions are now loaded dynamically from Supabase instead of being hardcoded. This allows new merchant logos to be added without requiring an app update.
 
-### 💰 On-Chain Fee Collection for Bill Pay
+### 💰 Improved Fee Transparency
 
-Off-ramp fees for bill pay transfers are now collected on-chain instead of through Bridge's developer fee mechanism, giving us more control and transparency over the fee structure.
+Off-ramp fees for bill pay transfers are now collected on-chain, providing full transparency via the blockchain. You can verify every fee in your transaction history.
 
 ---
 
@@ -273,6 +265,102 @@ Download it now: [Karma on the App Store](https://apps.apple.com/us/app/karma-cr
 
 ---
 
+## February 17, 2026
+
+### 📱 Rain Terms & Agreements in App
+
+Added a dedicated terms and agreements step before card creation, ensuring users review and accept all required card program terms directly within the app. Virtual account creation now automatically handles user records for a smoother setup process.
+
+---
+
+## February 13, 2026
+
+### 🌐 Web App Light Mode & KYC Dashboard
+
+Deployed a refreshed web app with a light mode design, updated landing page matching the Karma brand system, and KYC verification directly accessible from the dashboard. The KYC page has been redesigned with proper branding and improved logo rendering.
+
+### 💳 $10 Minimum Fund Gate
+
+A $10 minimum wallet balance is now required before card creation. This ensures users have funds available for their first transaction and reduces abandoned card activations.
+
+---
+
+## February 12, 2026
+
+### 💰 Simplified Service Fee
+
+Simplified the Karma card service fee to a flat 0.5% on transactions over $1. This replaces the previous tiered fee structure with a clearer, more predictable model.
+
+### 🔔 Deposit Notifications
+
+Push notifications now fire when funds arrive in your virtual account, keeping you informed as your on-ramp deposits progress through each stage.
+
+---
+
+## February 11, 2026
+
+### 🔀 In-App Token Swaps
+
+Added a full swap screen to the mobile app, enabling token-to-token swaps directly within Karma. The swap integrates with Jupiter for best-price routing, and all gas fees are sponsored by Karma.
+
+### 💳 Smart Fee Handling
+
+Card authorization now includes intelligent fee calculation, ensuring fees are properly accounted for during transaction processing without impacting authorization speed.
+
+### 🌉 Bridge KYC Flow Improvements
+
+Fixed several issues with the Bridge KYC verification flow, including modal presentation conflicts on iOS, browser handoff reliability, and support for USDT alongside USDC.
+
+---
+
+## February 9, 2026
+
+### ✅ Sumsub Hosted Verification
+
+Replaced the manual KYC data collection flow with Sumsub's hosted verification solution. Users are now redirected to a secure, professional verification interface that handles document scanning, liveness checks, and identity validation—resulting in higher pass rates and a faster onboarding experience.
+
+---
+
+## February 6, 2026
+
+### 🔢 OTP Autofill Fix
+
+Fixed an issue where the OTP verification screen would only register the first digit when using autofill from SMS or password managers. All 6 digits now populate correctly.
+
+### 💰 Balance Display Fix
+
+Floored balance display values to prevent edge cases where users would see a slightly higher balance than what's actually available, which could cause "not enough balance" errors when trying to send their full amount.
+
+---
+
+## February 5, 2026
+
+### ⛓️ On-Chain Balance as Source of Truth
+
+Eliminated reliance on cached balances for all financial decisions. Card authorizations, withdrawals, and balance displays now pull directly from the blockchain, ensuring accuracy even during high transaction volume. This is a foundational change that improves reliability across all money movement operations.
+
+### 🌍 Display Currency Conversion
+
+Added support for viewing your balance in 30+ fiat currencies. Tap your balance to open a currency picker and choose your preferred display currency. Exchange rates are updated regularly and your preference is saved across sessions.
+
+### 🔔 Actionable Decline Notifications
+
+Card decline notifications now include context about why the transaction was declined, helping you understand and resolve issues quickly—whether it's insufficient balance, merchant restrictions, or other reasons.
+
+### 🏥 Fund Health Monitoring
+
+Added automated monitoring that continuously tracks the health of operational funds and sends alerts when intervention is needed, ensuring uninterrupted service for all users.
+
+---
+
+## February 4, 2026
+
+### 🔧 Wallet Infrastructure Fixes
+
+Resolved an issue where wallet transfers could fail due to an organization mismatch in our key management system. Push notification titles have been cleaned up for a more professional appearance.
+
+---
+
 ## February 3, 2026
 
 ### 👁️ Hide Balance Toggle
@@ -297,11 +385,11 @@ Added logo support for GoDaddy, Vercel, and Super Pharm.
 
 ### ⚡ 3.5x Faster Card Authorization
 
-Reduced card authorization latency from ~700ms to ~200ms by combining multiple database queries into a single optimized call. This eliminates webhook timeouts that previously caused declined transactions, resulting in a smoother and more reliable payment experience at checkout.
+Significantly reduced card authorization latency, resulting in a smoother and more reliable payment experience at checkout. Transactions that previously timed out under load now process reliably.
 
 ### 🔓 Scalable Wallet Infrastructure
 
-Upgraded our wallet creation system to support unlimited users by switching to a sub-organization architecture. New users are no longer affected by per-organization wallet limits, ensuring seamless onboarding as we scale.
+Upgraded our wallet creation system to support unlimited users. New users are no longer affected by capacity limits, ensuring seamless onboarding as we scale.
 
 ### 🔍 Country Search on Signup
 
@@ -309,7 +397,7 @@ Added a search bar to the country selection screen during onboarding. Users can 
 
 ### 🛡️ Refund Fraud Detection & Auto-Block
 
-Added an automated fraud detection system that validates refund transactions against user spend history. If a refund arrives from a merchant the user has never transacted with across any of their cards, the refund is declined, the card is automatically frozen, and the account is flagged for review. Fraud-blocked cards cannot be unfrozen by the user and withdrawals are disabled until support resolves the case.
+Added an automated fraud detection system that monitors for suspicious refund activity. Fraudulent refunds are automatically declined, and affected cards are frozen and flagged for review to protect users from unauthorized transactions.
 
 ### 🔔 Smarter Push Notifications
 
@@ -405,7 +493,7 @@ Added comprehensive support for handling identity verification rejections and de
 
 ### ⚡ Infrastructure Upgrade for Scale
 
-We've upgraded our Turnkey wallet infrastructure to support 100,000+ users with improved reliability and performance. This upgrade ensures Karma can continue to scale while maintaining fast and secure wallet operations for all users.
+We've upgraded our wallet infrastructure with improved reliability and performance. This upgrade ensures Karma can continue to scale while maintaining fast and secure wallet operations for all users.
 
 ### 💰 Karma Sponsors All On-Chain Fees
 
@@ -415,21 +503,17 @@ Karma now covers all Solana transaction fees, rent costs, and token account crea
 
 ## January 24, 2026
 
-### 💵 Amount Handling Standardization
-
-Updated our backend to handle amounts in dollars instead of cents, simplifying calculations and reducing potential conversion errors. This change ensures consistent amount handling across all API endpoints and improves accuracy in transaction processing.
-
-### 🔗 PDA Support for Rain Deposit Addresses
-
-Added support for Program Derived Addresses (PDAs) for Rain deposit addresses. This enhancement enables more flexible on-chain deposit routing and improves compatibility with Solana's account model for card funding operations.
-
 ### ⚡ Faster Card Authorization
 
-Optimized card authorization speed by shifting the source of truth to on-chain data powered by Helius. Card transactions now verify balances directly from the blockchain in real-time, resulting in faster approval times and more reliable authorization decisions.
+Optimized card authorization speed by verifying balances directly from the blockchain in real-time, resulting in faster approval times and more reliable authorization decisions.
 
-### 💳 Card Wallet Withdrawal Endpoints
+### 💳 Card Wallet Withdrawals
 
-Added withdrawal endpoints for the card-linked wallet, enabling users to move funds from their card wallet back to their main wallet or external addresses. This provides greater flexibility in managing card balances and gives users full control over their funds.
+You can now move funds from your card wallet back to your main wallet or external addresses. This provides greater flexibility in managing card balances and gives you full control over your funds.
+
+### 🔧 Backend Improvements
+
+Standardized amount handling across all API endpoints and improved on-chain deposit routing for card funding operations, resulting in more accurate and reliable transaction processing.
 
 ---
 
