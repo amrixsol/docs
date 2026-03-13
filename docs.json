@@ -60,6 +60,17 @@
         ]
       },
       {
+        "group": "Businesses (KYB)",
+        "icon": "building",
+        "pages": [
+          "businesses/overview",
+          "businesses/formation-documents",
+          "businesses/ownership-documents",
+          "businesses/identification-numbers",
+          "businesses/high-risk-activities"
+        ]
+      },
+      {
         "group": "Developers",
         "icon": "code",
         "pages": ["developers"]
