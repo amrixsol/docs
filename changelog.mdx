@@ -8,6 +8,254 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## April 20, 2026
+
+### 📊 Holders Tab Overhaul
+
+The Holders tab on token pages has been refined with a cleaner layout, better sorting, and updated data presentation so you can scan whale activity at a glance.
+
+### ⏱️ Longer Trading Sessions
+
+Trading sessions now stay active for 7 days of inactivity before re-authentication is required, dramatically reducing friction for frequent traders who hop in and out throughout the week.
+
+### ↔️ Resizable Trading Panel
+
+You can now resize the trading panel to match your workflow, giving you more flexibility in how much screen real estate is devoted to the order form versus the chart.
+
+---
+
+## April 19, 2026
+
+### 📈 Chart Rendering Improvements
+
+A batch of chart fixes delivers a much cleaner candlestick view: interior empty candles are preserved to remove visual gaps, dead candles are dropped instead of being flat-filled, and the initial chart fit no longer splices in pre-dead-period history — so what you see reflects real trading activity.
+
+### 🔁 Jupiter Fallback for Token Data
+
+When DexScreener doesn't have a token listed, the app now automatically falls back to Jupiter so you can still pull up a token page and see live data without a dead-end.
+
+### ✨ No More Banner Flash
+
+Eliminated the brief flash of the announcement banner during server-side rendering — pages now load cleanly without any visual pop-in.
+
+---
+
+## April 17, 2026
+
+### 🔗 X Search Deeplink on Token Info
+
+Token info cards now include a one-tap deeplink to search the token on X (formerly Twitter), making it easy to dive into community chatter without copy-pasting tickers or contract addresses.
+
+### 👁️ Market Cap & Holdings Chip in Watchlist Bar
+
+Your watchlist bar now surfaces the market cap and your current holdings right inline, so you can monitor positions at a glance without opening each token page.
+
+### 🔧 Trading Updates
+
+Various refinements across the trading flow: smoother interactions, better defaults, and cleaner transitions throughout the panel.
+
+### 💳 Accurate Card Completion Refunds
+
+When a card transaction settles for less than the authorized amount, the over-authorized delta is now automatically refunded to your balance on completion — so you're never short money that's already been spent.
+
+---
+
+## April 16, 2026
+
+### 📜 Dynamic Chart Loading
+
+Scroll back in time and the chart now fetches older candles on demand, so you can explore a token's full price history without waiting for everything to load upfront.
+
+### 🎯 Persistent Chart Preferences
+
+Your chart timeframe and price mode (price vs. MCap) now persist as you navigate between tokens. Set it once and it stays — no more re-selecting your preferred view on every token.
+
+### 🧹 Cleaner Candle Data
+
+Empty bars (candles with no trades) are now filtered from the chart, giving you a less noisy view of actual market activity.
+
+---
+
+## April 15, 2026
+
+### ⭐ Watchlist Star on Token Pages
+
+A one-tap star button now lives on the token page header. Tap to add or remove from your watchlist with instant bar refresh — no more bouncing back to a list screen.
+
+### 🔧 Accurate Swap Amounts
+
+Swap amounts are now derived from on-chain decimals and Token-2022 accounts use the correct program ID, ensuring precision across the full universe of Solana tokens.
+
+---
+
+## April 13, 2026
+
+### 🪙 Holders Tab on Trading
+
+The trading terminal now features a holders tab, giving you insight into token distribution and top wallets right alongside your chart and order form.
+
+### 🏦 Bank Deposits in Wallet Modal
+
+You can now kick off a bank deposit directly from the wallet modal, keeping funding options one tap away wherever you are in the app.
+
+### 💵 Refined Balance Display
+
+Both USDC and SOL balances in the navbar have been corrected for accurate display, and the SOL amount now shows with improved formatting that better reflects its value.
+
+### 📺 TradingView Attribution
+
+Added TradingView attribution to the website footer, giving proper credit to the charting technology powering our token pages.
+
+---
+
+## April 12, 2026
+
+### ⚡ Unified Turbo Mode
+
+Turbo mode now works seamlessly for both buying and selling with animated transitions between presets. The 4th buy preset has been replaced with a Max button for even faster full-position entries.
+
+### 🎯 Chart Polish
+
+Multiple chart refinements: MCap mode now resets when navigating to a different token, snaps zoom back on every price tick, and correctly resets the price scale when toggling modes — even after you've manually dragged the chart.
+
+### 📊 Accurate P&L
+
+Fixed an issue where realized gains were being double-counted in the P&L calculation. Your profit and loss numbers are now accurate, and your full swap history is paginated so long-term traders see every trade.
+
+---
+
+## April 11, 2026
+
+### 🚀 Trading Panel Redesign
+
+Introduced the MCap toggle, turbo mode, and a simplified buy panel for faster, cleaner order entry. The new layout prioritizes speed without sacrificing the data you need to make decisions.
+
+### 📱 Mobile Responsiveness
+
+Swap, token detail, and sidebar navigation have been tuned up for mobile. The dashboard bottom nav now stacks cleanly above the status bar, and the status bar itself no longer wraps or overflows on smaller screens.
+
+### 🔧 Chart & Trading Fixes
+
+The MCap mode chart no longer blanks on toggle, the average entry line stays put during updates, and the "You" trades filter now uses an authoritative per-user feed so your trade history is always correct.
+
+---
+
+## April 10, 2026
+
+### ✨ Webapp Onboarding Redesign
+
+The web onboarding flow has been completely rebuilt with a high-end UI, non-custodial wallet support, and a streamlined step-by-step experience. First impressions now match the premium feel of the mobile app from the very first screen.
+
+### 🔍 Better Token Search
+
+Searching by an exact contract address now surfaces the token directly — including unverified ones — so you can find any token on Solana without friction.
+
+### 👋 Smarter Welcome Modal
+
+The welcome modal now only appears for authenticated users who've completed onboarding, preventing it from cluttering the experience for visitors and partially-onboarded users.
+
+---
+
+## April 8, 2026
+
+### 🛡️ On-Chain Mint Safety in Trade Panel
+
+The trade panel now surfaces on-chain mint safety signals directly inside the order form, so you can spot potentially unsafe tokens before you buy. The safety card only shows for real threats — no noise for legitimate tokens.
+
+### ⌨️ Clearer Execute Shortcuts
+
+The execute button now shows a clearer keyboard shortcut hint, making it easy to learn and use the trading hotkeys.
+
+### ✨ UI Polish
+
+Comprehensive polish pass with refined animation components across the web experience, adding subtle motion and refinement throughout.
+
+---
+
+## April 4, 2026
+
+### 🖥️ Trading Terminal Launch
+
+Launched the full Karma trading terminal — a professional-grade trading experience with token search, a dedicated wallet widget, status bar, and a complete design system overhaul. This is a major step forward for on-chain trading inside Karma.
+
+---
+
+## April 1, 2026
+
+### 🌐 Various Webapp Updates
+
+Shipped a large batch of webapp improvements across the experience — refining the cards page, polishing flows, and setting the stage for the upcoming trading terminal.
+
+---
+
+## March 30, 2026
+
+### 🎨 Swap Screen Icon Refresh
+
+Swap screen header icons have been updated from transparent to solid white with improved visibility on interactive secondary icons — making controls far easier to see at a glance.
+
+### 💱 Accurate Swap Fee Display
+
+Swap fees are now calculated from the USD value of the trade rather than raw token count, giving you an accurate and consistent fee preview regardless of which token you're swapping.
+
+### ⚡ Instant USD on Swap Screen
+
+Live price data is now cached at module load, so USD values appear instantly on the swap screen instead of flickering in after a fetch.
+
+---
+
+## March 25, 2026
+
+### 🎬 Links Page Redesign
+
+The links page has been redesigned with a cinematic video background and styling that matches the main Karma brand. The tagline has been updated to "Crypto banking, trading, and rewards in one app" — a crisper articulation of what Karma is.
+
+---
+
+## March 23, 2026
+
+### 🏦 Escrow Hold System for On-Ramp
+
+Introduced an escrow hold system for new on-ramp accounts, with clear status tracking and a 60-day hold window aligned to the ACH chargeback window. You'll see transparent status updates throughout the hold period.
+
+### 📧 Verified Email Domain
+
+Escrow and compliance emails now send from our verified Resend domain with a clean reply-to address, improving deliverability and trust.
+
+---
+
+## March 22, 2026
+
+### 💵 Dynamic ATA Rent Reimbursement
+
+Account rent reimbursements are now priced dynamically against live SOL, ensuring accurate amounts regardless of SOL price volatility.
+
+### ✅ Minimum Send Validation
+
+Custodial transfers and sends now enforce a $1 minimum, reducing failed transactions and ensuring every transfer successfully clears.
+
+---
+
+## March 21, 2026
+
+### ✅ On-Chain Confirmation for Transfers
+
+Transfers now wait for on-chain confirmation before being marked as completed. You'll see more accurate status updates across your transaction history.
+
+### 🌐 KYC Name Normalization
+
+Names with special characters are now stripped to alphanumeric equivalents before being submitted for KYC verification, improving pass rates for users with punctuation in their legal names.
+
+### 💬 Clearer Error Messages
+
+When a swap fails due to missing SOL or when spending limits are set below the $1 minimum, you'll now see a user-friendly error that tells you exactly what to do instead of a generic failure message.
+
+### 📬 Contact Management
+
+Fixed an issue where updating a contact that didn't exist would produce an unhelpful error — the API now handles this case gracefully.
+
+---
+
 ## March 18, 2026
 
 ### 📲 App Store Download Banner
