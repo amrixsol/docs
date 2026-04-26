@@ -18,6 +18,28 @@ description: "Real‑time FX. Zero hidden fees. Simple pricing."
 - **ACH transfer**: \$0.95
 - **FX margin**: None — real-time rates, zero markup
 
+### Trading (Solana token swaps)
+Karma routes swaps through Jupiter and aggregates the best price across Solana DEXes. We charge a single in-app fee on top — no spread markup, and no separate Jupiter platform fee on your end.
+
+- **Karma swap fee**: 0.5% of trade size
+  - **Minimum $0.45** per trade (floor for very small trades)
+  - **Maximum 2.55%** (cap on tiny trades — kicks in below ~\$17.65)
+  - At \$90+ the floor is reached, so you always pay a flat 0.5%
+- **Network gas**: **Sponsored by Karma** on the default route (Jupiter Ultra, gasless). Only the legacy v6 fallback — used in rare edge cases — passes Solana network gas (typically <\$0.01) on to you.
+- **DEX/LP fees**: Set by the underlying liquidity venue (Raydium, Meteora, Orca, etc.) and already reflected in the price you see. We do not add a markup on top.
+
+#### Staking discount
+
+Stakers pay less or nothing on the Karma swap fee. The discount applies on top of the base 0.5%:
+
+| Staked $KARMA | Effective swap fee |
+| ------------- | ------------------ |
+| < 1M          | 0.5% (full fee)    |
+| 1M+           | 0.25% (50% off)    |
+| 10M+          | 0% (free swaps)    |
+
+See the [Staking](/staking) page for details on how staking tiers work.
+
 ### General
 - **No subscriptions**: No signup, monthly, or hidden fees
 

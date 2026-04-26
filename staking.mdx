@@ -42,7 +42,12 @@ So a 2× boost on a Rising-tier user effectively doubles the KP rate on each swi
 
 ### What the fee discount applies to
 
-The fee discount applies to **in-app swap fees** (token swaps inside Karma). Network gas fees, ramp fees, and external partner fees are unaffected.
+The fee discount applies to **the Karma swap fee** on Solana token trades inside the app. The base swap fee is 0.5% (with a \$0.45 minimum floor on small trades) — see [Fees → Trading](/fees#trading-solana-token-swaps) for the full breakdown.
+
+- **1M+ staked**: 50% off → effective 0.25% swap fee
+- **10M+ staked**: zero swap fee
+
+Network gas is already sponsored by Karma on the default route regardless of staking. Ramp fees (on-ramp / off-ramp) and external partner fees are unaffected by staking.
 
 ## How to stake
 
