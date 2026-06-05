@@ -6,18 +6,16 @@ description: "Banking-day access windows and settlement expectations for fiat ra
 
 ## Fiat rails
 
-We access fiat rails on banking days during banking hours. Cutoffs and typical settlement times:
+We access fiat rails on banking days during banking hours. Cutoffs and typical settlement times for payouts to your bank:
 
-| Currency | Rail | Cutoff (ET) | Settlement Time | Notes |
+| Currency | Rail | Cutoff (ET) | Settlement time | Notes |
 | :-- | :-- | :-- | :-- | :-- |
-| USD | Next Day ACH | 1:00 PM | 8:30 AM next business day | Batches submitted at 1:00 PM ET daily. Post‑cutoff, processed next day. Funds typically land in 1–2 business days. |
-| USD | Same Day ACH | 9:30 AM, 1:45 PM, 3:45 PM | 1:00 PM, 5:00 PM, 6:00 PM same day | Same‑day settlement at receiving bank; availability depends on that bank. |
-| USD | Wire | 4:45 PM | ~1 hour after sending | Transactions after 4:45 PM ET are sent next business day. |
-| EUR | SEPA Instant | N/A | <30 seconds | 24/7/365; requires beneficiary bank support. |
-| EUR | SEPA Credit | 9:00 AM | 1–2 business days | Used for transactions > €100K. |
+| USD | Next Day ACH | 4:45 PM | 8:30 AM next business day | Batches are submitted each evening on banking days. Transfers after the cutoff are processed the next banking day; funds typically land in 1–2 business days. |
+| USD | Same Day ACH | 9:30 AM, 1:45 PM, 2:30 PM | 1:00 PM, 5:00 PM, 6:00 PM same day | Per-transaction limit of 1,000,000 USD. Same-day availability depends on the receiving bank; if unavailable, the transfer is rerouted via Next Day ACH. |
+| USD | Wire | 4:45 PM | Up to 2 hours | Transactions after 4:45 PM ET are sent the next banking day. |
+| EUR | SEPA Instant | N/A | Up to 5 minutes | Available 24/7/365 for transactions up to 1,000,000 EUR. Requires beneficiary bank support. |
+| EUR | SEPA Credit | 7:00 AM | 1–3 business days | Used for transactions over 1,000,000 EUR or when SEPA Instant is unavailable. |
 
 ## Onramps (fiat to crypto)
 
-Typically sent within minutes of fiat landing in our bank account.
-
-
+Crypto is typically sent within minutes of fiat landing in our bank account.
