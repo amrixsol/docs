@@ -23,8 +23,6 @@ Karma routes swaps through Jupiter and aggregates the best price across Solana D
 
 - **Karma swap fee**: 0.5% of trade size
   - **Minimum $0.45** per trade (floor for very small trades)
-  - **Maximum 2.55%** (cap on tiny trades — kicks in below ~\$17.65)
-  - At \$90+ the floor is reached, so you always pay a flat 0.5%
 - **Network gas**: **Sponsored by Karma** on the default route (Jupiter Ultra, gasless). Only the legacy v6 fallback — used in rare edge cases — passes Solana network gas (typically under \$0.01) on to you.
 - **DEX/LP fees**: Set by the underlying liquidity venue (Raydium, Meteora, Orca, etc.) and already reflected in the price you see. We do not add a markup on top.
 
@@ -45,7 +43,7 @@ See the [Staking](/staking) page for details on how staking tiers work.
 
 Rates are fetched live and displayed in app.
 
-\*Additional fees may apply for third-party deposits, high-risk transactions, or enhanced due diligence requirements. In the case of high-risk payments, this ranges between a 2-4% premium.
+\*Additional fees may apply for third-party deposits, high-risk transactions, or enhanced due diligence requirements. In the case of high-risk payments, there is a cap of 5%.
 
 
 
