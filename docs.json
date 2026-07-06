@@ -8,6 +8,12 @@
     "dark": "#5c2691"
   },
   "favicon": "/favicon.svg",
+  "redirects": [
+    {
+      "source": "/staking",
+      "destination": "/holder-benefits"
+    }
+  ],
   "navigation": {
     "groups": [
       {
@@ -25,7 +31,7 @@
       },
       {
         "group": "About $KARMA",
-        "pages": ["what-is-karma-token", "staking", "the-real-world-flywheel"]
+        "pages": ["what-is-karma-token", "holder-benefits", "the-real-world-flywheel"]
       },
       {
         "group": "How it works",
