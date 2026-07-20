@@ -26,6 +26,16 @@ Karma routes swaps through Jupiter and aggregates the best price across Solana D
 - **Network gas**: **Sponsored by Karma** on the default route (Jupiter Ultra, gasless). Only the legacy v6 fallback — used in rare edge cases — passes Solana network gas (typically under \$0.01) on to you.
 - **DEX/LP fees**: Set by the underlying liquidity venue (Raydium, Meteora, Orca, etc.) and already reflected in the price you see. We do not add a markup on top.
 
+### Trading (Base and Robinhood Chain token swaps)
+Same simple pricing as Solana, with no minimum:
+
+- **Karma swap fee**: 0.5% of trade size — **no minimum**, even on the smallest trades
+- **Network gas**: **Sponsored by Karma** — swaps execute gasless, so you never need ETH in your wallet to trade
+- **Cash conversions are free**: moving between stablecoins (for example USDC ↔ USDG) carries no Karma fee
+- **DEX/LP fees**: Set by the underlying liquidity venue and already reflected in the price you see. We do not add a markup on top.
+
+Cross-chain swaps (for example funding a Base or Robinhood Chain trade from your Solana balance) follow the Solana pricing above: 0.5% with the \$0.45 minimum on trades of \$2 or more.
+
 #### Holder cashback
 
 \$KARMA holders get part or all of the Karma swap fee back as \$KARMA, claimable in the app. Everyone pays the same fee at trade time; the cashback comes back after the swap and is calculated on the fee minus a small network minimum (\$0.45 when Karma sponsors your gas, \$0.05 when you pay your own).
