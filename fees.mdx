@@ -19,17 +19,19 @@ description: "Real‑time FX. Zero hidden fees. Simple pricing."
 - **FX fee**: Mid-market + 0.50% on EUR, GBP, and MXN conversions
 
 ### Trading (Solana token swaps)
-Karma routes swaps through Jupiter and aggregates the best price across Solana DEXes. We charge a single in-app fee on top — no spread markup, and no separate Jupiter platform fee on your end.
+Karma aggregates the best available price across Solana liquidity venues. We charge a single in-app fee on top, with no spread markup.
 
 - **Karma swap fee**: 0.5% of trade size
-  - **Minimum $0.45** per trade (floor for very small trades)
-- **Network gas**: **Sponsored by Karma** on the default route (Jupiter Ultra, gasless). Only the legacy v6 fallback — used in rare edge cases — passes Solana network gas (typically under \$0.01) on to you.
-- **DEX/LP fees**: Set by the underlying liquidity venue (Raydium, Meteora, Orca, etc.) and already reflected in the price you see. We do not add a markup on top.
+  - **Minimum $0.45** per trade on trades of \$2 or more (trades under \$2 pay the flat 0.5%)
+- **Network gas**: **Sponsored by Karma** on the default route (gasless). Rare fallback routes pass Solana network gas (typically under \$0.01) on to you.
+- **DEX/LP fees**: Set by the underlying liquidity venue and already reflected in the price you see. We do not add a markup on top.
 
 ### Trading (Base and Robinhood Chain token swaps)
-Same simple pricing as Solana, with no minimum:
+Same simple pricing:
 
-- **Karma swap fee**: 0.5% of trade size — **no minimum**, even on the smallest trades
+- **Karma swap fee**: 0.5% of trade size
+  - **Robinhood Chain**: same **\$0.45 minimum** as Solana on trades of \$2 or more (trades under \$2 pay the flat 0.5%)
+  - **Base**: no minimum, even on the smallest trades
 - **Network gas**: **Sponsored by Karma** — swaps execute gasless, so you never need ETH in your wallet to trade
 - **Cash conversions are free**: moving between stablecoins (for example USDC ↔ USDG) carries no Karma fee
 - **DEX/LP fees**: Set by the underlying liquidity venue and already reflected in the price you see. We do not add a markup on top.
