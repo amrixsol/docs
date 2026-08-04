@@ -8,6 +8,182 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 4, 2026
+
+### 📈 Stock Searches, Instant
+
+Searching a stock ticker now returns instantly, with the actual market price. Robinhood stock tokens live in the same fast index as every other token, and their price comes from the live market quote instead of whatever a thin pool last printed. No more absurd numbers on freshly listed stocks.
+
+### 🔁 Fast Markets, Fewer Failed Trades
+
+When a Solana trade reverts because the price moved during confirmation, Karma now retries automatically with more headroom instead of giving up. Roughly a quarter of trades that used to die with "Price moved too fast" now land on their own.
+
+### 🐞 Smaller Fixes
+
+The feed no longer dead-ends after the first page, and it refreshes itself when you come back to the tab. A sign-in issue that could stall wallet setup on new accounts is fixed. And a bug that showed "No passkey found" when sending from some Ethereum wallets is gone.
+
+---
+
+## August 3, 2026
+
+### 📥 Seed Phrase Import, Deeper
+
+Importing a seed phrase now scans the derivation paths other wallet apps actually use, so wallets created elsewhere show up instead of seeming to be missing. Importing several wallets in one go works reliably. And the phrase's own Ethereum wallet comes along as a sibling, the way you'd expect from any serious multi-chain wallet.
+
+### 🐞 Smaller Fixes
+
+Cross-chain buys of very new tokens no longer get refused with an absurd price-impact number; the app checks the pool itself and finds a route that works. Brand-new token charts no longer stretch a couple days of trading across a two-year axis. And a launch that graduates stays graduated, even if its price dumps afterward.
+
+---
+
+## August 2, 2026
+
+### 🔔 Price Alerts on Any Token
+
+Tap the bell on any token page and set your own alert: above a price, below a price, or on a percent move, checked around the clock and delivered as a push. On top of that, tokens on your watchlist now notify you about big moves automatically, no setup needed.
+
+### 🏦 Every Robinhood Stock, Automatically
+
+Stock tokens on Robinhood Chain are now tracked from the source, so new listings appear in Karma on their own. Corporate actions like splits send you a push, so a changed number in your portfolio never comes as a surprise.
+
+### ⚡ Search Paints Instantly
+
+Token results render immediately and then tick live as fresh prices stream in. Stock results that used to trail the rest by a couple seconds now land with everything else.
+
+### 🖼️ Token Pages With Media
+
+Token pages can now carry a curated media strip, with X posts rendering as rich previews. And when a token has posts, the Posts tab is the default, so you land in the conversation instead of an About page.
+
+### 🛡️ Stablecoin Impostors Neutralized
+
+Tokens naming themselves after a stablecoin could spoof a dollar value in a few places. Dollar anchoring now goes strictly by contract address, never by name or symbol, and impostors get blocklisted as we find them.
+
+### 🐞 Smaller Fixes
+
+Selling \$KARMA v2 through certain routes could revert; there is now a direct route that always works, and a safety check no longer false-flags it as unsellable based on a dust pool. Positions no longer vanish from home when you hold many Robinhood Chain tokens. If the app misses a token you hold, the sell flow now self-heals from your live balance. Duplicate push notifications are gone. An Android crash on first open is fixed. New Robinhood Chain tokens chart their full history, timeframe switches are instant, and the live tip stays attached to the chart. Hitting a follower milestone now earns you a celebratory push. The stats page shows live numbers. And a rare card decline no longer leaves money briefly stuck.
+
+---
+
+## August 1, 2026
+
+### 💚 P&L You Can Trust, on Every Chain
+
+Profit and loss on Ethereum and Base positions is now priced correctly end to end: the daily snapshots cover every chain, the home row pill shows the position's full P&L instead of unrealized-only, and a lookup bug that silently dropped chunks of history is fixed.
+
+### 👥 Holders, On-Chain Truth
+
+The holders list on a token page now reflects actual on-chain balances, priced correctly on every chain. What you see is what people really hold.
+
+### 🐞 Smaller Fixes
+
+Base positions can no longer silently show \$0 when a price source blips; you see a degraded state instead of wrong numbers. Token pages explain circulating market cap with a burned-supply row. Same-chain swaps on Robinhood Chain no longer route through dust pools with insane slippage. Profiles load noticeably faster. Robinhood stock rows in search refresh with a live pool price. And swaps only offer venues that route well, with your slippage setting honored on every chain.
+
+---
+
+## July 31, 2026
+
+### 🕯️ Candles, Rebuilt
+
+Charts got a full pass. Every candle opens where the last one closed. Stretches with no trades draw as proper doji bars instead of dashed gaps. Bodies are chunkier and never overflow their slot. The 1H view uses 30 two-minute bars instead of 60 slivers, and every token now opens on 1H. Cold loads are dramatically faster, the chart no longer flips between pools mid-session, and the scrub dot stays on the candles at the window edges.
+
+### 🎯 Average Entry and Exit, on the Chart
+
+Your position now shows average entry and average exit, as numbers on the position card and as lines on the chart. You can finally see at a glance where you are relative to your basis.
+
+### 💼 Limit-Order Money Counts
+
+Funds reserved for limit orders and take-profit/stop-loss now count toward your net worth, are priced live, and show correctly on your profile.
+
+### 🐞 Smaller Fixes
+
+Ethereum holdings wear a P&L pill with the 24h move. A quick sell right after a buy no longer briefly mangles the position, and positions damaged by that race were repaired. And your followers now get a push with the content when you post.
+
+---
+
+## July 30, 2026
+
+### 🎬 Videos on Token Pages
+
+Token pages grew a Videos shelf: clips the community attached to their posts, with credit to the poster on every tile. The conversation about a token and the footage of it now live in the same place.
+
+### 🔴 LIVE Charts
+
+A new LIVE timeframe streams price in real time, the header shows dollar change alongside percent, sparklines paint instantly, and prices tick live across the whole app.
+
+### 🐞 Smaller Fixes
+
+Search pins verified tokens first and groups results per chain. Stablecoins no longer clutter Trending and Gainers. Solana token pages wear a chain badge like everyone else. EVM market caps derive from one coherent supply snapshot instead of mixing sources. And another class of fee-trap pools is refused before it can eat a trade.
+
+---
+
+## July 29, 2026
+
+### 🌐 Ethereum, Everywhere
+
+Ethereum mainnet is now a full citizen: trending, search, prices, sparklines, charts, buys and sells, sends, history, and P&L. Cross-chain buys route to mainnet automatically. Mainnet gas is real, so the minimum buy is \$2, which keeps fees from eating tiny trades.
+
+### ✍️ A Much Better Composer
+
+Posting got a real upgrade. Your post appears instantly while it uploads. Drafts autosave. A holdings picker shows what you can attach. Pasted links become rich previews, and per-platform clip buttons guide attaching TikTok, YouTube, or Instagram clips.
+
+### ✅ Karma-Verified Tokens
+
+We now hand-curate a verified tier for EVM tokens. Verified tokens rank first in search with a visible badge, and ranking weighs real two-sided liquidity, so a fake pool can no longer outrank the genuine token.
+
+### 🧾 Provenance Cards
+
+Token pages now show where a token came from: Virtuals launches on Base and pump.fun launches on Solana get a provenance card with the supply split, so you know what you're holding.
+
+### 🐞 Smaller Fixes
+
+Blank charts and false honeypot flags on mainnet tokens are fixed. Long-press a contract address to reveal the whole thing. Burned supply is excluded from market caps. And Ethereum joined the deposit-crypto network list.
+
+---
+
+## July 28, 2026
+
+### 🌐 Ethereum Mainnet: Deposits and Sends
+
+Ethereum mainnet support started rolling out: deposit from mainnet, send and withdraw to mainnet, with full trading following a day later. We cover gas on Ethereum buys, and during gas spikes new buys pause briefly rather than burn your money. Selling is never gated.
+
+### 💬 Easier Ways Into the Conversation
+
+Token Posts tabs got visible compose buttons, any thesis entry can be shared, and non-holders can post a thesis too. Even the empty state is tappable and opens the composer with the token attached.
+
+### 🐞 Smaller Fixes
+
+Charts for quieter Robinhood Chain tokens paint in a fraction of the time they used to. And Solana reads got automatic failover, so a single provider blip no longer takes anything down with it.
+
+---
+
+## July 27, 2026
+
+### 🚨 Automatic Outage Detection
+
+When an upstream data provider degrades, Karma now detects it on its own and shows a banner at the top of home. You immediately know it's a network-wide blip and not your account.
+
+### 🐞 Smaller Fixes
+
+Some Robinhood Chain tokens using a nonstandard pool type were untradeable or showed a phantom 300% price impact; both are fixed. And X, YouTube, TikTok, and Instagram links in feed posts now render as clean platform pills.
+
+---
+
+## July 26, 2026
+
+### 🧹 Dust, Every Chain, Fee-Free
+
+The dust converter now covers Base and Robinhood Chain alongside Solana, and all dust conversions are fee-free. The sheet also scrolls properly when you have a long list of crumbs.
+
+### 🛡️ Drain Scams, Caught and Flagged
+
+A scam family that drains buyers after purchase is now detected automatically. Flagged tokens show a red warning banner on their page, disappear from discovery, and existing holders get a notification so nobody buys in blind.
+
+### 🐞 Smaller Fixes
+
+The feed collapses rapid-fire scalp bursts into one card per run, and a trade card no longer multiplies a closed position's P&L. Cross-chain trades that get refunded no longer leave phantom positions behind. Robinhood Chain charts pick up the newest trades even when cached history lags. And limit orders that fail now tell you the real reason, with the deposit requirement checked up front.
+
+---
+
 ## July 25, 2026
 
 ### 𝕏 Your X Account, Everywhere
