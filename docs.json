@@ -12,32 +12,48 @@
     {
       "source": "/staking",
       "destination": "/holder-benefits"
+    },
+    {
+      "source": "/the-real-world-flywheel",
+      "destination": "/buybacks"
     }
   ],
   "navigation": {
     "groups": [
       {
         "group": "Getting started",
-        "pages": ["index"]
+        "pages": [
+          "index"
+        ]
       },
       {
         "group": "Updates",
         "icon": "megaphone",
-        "pages": ["changelog"]
+        "pages": [
+          "changelog"
+        ]
       },
       {
         "group": "About Karma",
-        "pages": ["what-is-karma", "why-did-we-build-this", "features"]
+        "pages": [
+          "what-is-karma",
+          "why-did-we-build-this",
+          "features"
+        ]
       },
       {
         "group": "About $KARMA",
-        "pages": ["what-is-karma-token", "holder-benefits", "the-real-world-flywheel"]
+        "pages": [
+          "what-is-karma-token",
+          "holder-benefits",
+          "buybacks"
+        ]
       },
       {
         "group": "How it works",
         "pages": [
           "creating-a-karma-account",
-          "completing-kyc-procedure", 
+          "completing-kyc-procedure",
           "adding-bank-accounts",
           "creating-iban-for-your-phantom-wallet",
           "withdrawing-usdc-to-banks",
@@ -79,7 +95,9 @@
       {
         "group": "Developers",
         "icon": "code",
-        "pages": ["developers"]
+        "pages": [
+          "developers"
+        ]
       }
     ]
   },

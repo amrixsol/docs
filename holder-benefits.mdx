@@ -1,60 +1,63 @@
 ---
 title: "Holder Benefits"
 sidebarTitle: "Holder Benefits"
-description: "Hold $KARMA in your wallet to unlock fee cashback and multiplied rewards. No staking, no lock-ups, no APY. Benefits are product utility, not yield."
+description: "Hold $KARMA to unlock fee rebates up to 90% and multiplied rewards. No staking, no lock-ups, no APY. Benefits are product utility, not yield."
 ---
 
 Holding \$KARMA in your Karma wallet unlocks benefits automatically. There is nothing to deposit and nothing to lock: the app reads your balance and applies your tier on every trade and card purchase. Sell whenever you want.
 
-<Note>
-**\$KARMA v2 migration**: \$KARMA relaunched on Robinhood Chain (if you still hold the legacy Solana token, migrate at [migrate.trykarma.app](https://migrate.trykarma.app)). Holder benefits are moving to v2 now: cashback **claims** are temporarily paused while payouts re-key to the new token, and tier counting switches to your v2 balance as part of the same rollout. Your accrual continues and nothing is lost. Legacy staked balances keep counting until you withdraw them.
-</Note>
-
-Staking is retired. It used to require moving tokens into a vault with a 7-day exit cooldown. Holder benefits replace it with something strictly better: the same perks (and bigger ones), triggered by simply holding.
+Tiers are measured in the dollar value of the \$KARMA you hold, not a fixed token count. Fixed token thresholds break every time the price moves; dollar tiers stay stable through both directions.
 
 ## Tiers
 
-| \$KARMA held | KP multiplier | Swap-fee cashback | Card fees | Rewards tier unlock |
-| ----------- | ------------- | ----------------- | --------- | ------------------- |
-| 100,000+    | 1.5×          | —                 | —         | —                   |
-| 1,000,000+  | 2×            | 50% back          | 50% off   | Rising              |
-| 10,000,000+ | 3×            | 100% back         | Free      | Elite               |
+| You hold | Fee rebate | KP multiplier | Also unlocks |
+| -------- | ---------- | ------------- | ------------ |
+| \$10+     | 10%        | 1.1x          | Holder status |
+| \$100+    | 20%        | 1.25x         |              |
+| \$500+    | 35%        | 1.5x          |              |
+| \$2,500+  | 50%        | 2x            | 50% off card fees, Rising tier |
+| \$5,000+  | 70%        | 2.5x          | 50% off card fees |
+| \$10,000+ | 90%        | 3x            | Free card fees, Elite tier |
 
-Your balance is counted across all your Karma wallets and updates automatically when tokens move in or out. Black tier (25% cashback) remains earn-only and cannot be unlocked by holding.
+Entry starts at \$10 on purpose: almost anyone using the app has a reason to hold some.
 
-## Fee cashback, explained
+## You are never downgraded because the price moved
 
-You pay the normal swap fee like everyone else. After the trade, your tier's share of that fee comes back to you as \$KARMA, claimable in the app from the Rewards screen. Claimed tokens land in your wallet, where they immediately count toward your tier.
+The dollar figure is only used to qualify. The moment you reach a tier, the token amount you held is recorded, and you keep that tier for as long as you hold that many tokens or more. Price can do whatever it does. The only thing that moves you down a tier is selling.
 
-The cashback is calculated on the fee minus a small network minimum that covers what your swap actually costs to process:
+In practice: qualify with \$10,000 of \$KARMA, and that tier is yours while you keep those tokens, whether they are worth \$6,000 or \$30,000 later.
+
+Your balance is read as a 7 day average, so a tier cannot be bought with a single trade and sold the same day.
+
+## Fee rebates, explained
+
+You pay the normal swap fee like everyone else. Your tier's share of that fee accrues to you in dollars, and when you tap Claim on the Rewards screen, that amount is used to buy \$KARMA on the open market and send it straight to your wallet. Claims are available from \$1 accrued.
+
+The rebate is calculated on the fee minus a small network minimum that covers what your swap actually costs to process:
 
 - **\$0.45** when Karma sponsors your network gas (the default).
-- **\$0.05** when you pay your own gas. Keep a little SOL in your wallet and the app switches you to this automatically. Gas costs you around one cent, and your cashback grows by \$0.40 per trade.
+- **\$0.05** when you pay your own gas. Keep a little SOL in your wallet and the app switches you automatically.
 
-Example: a \$2,000 swap pays the standard \$10 fee. A 10M holder with SOL in their wallet gets \$9.95 back in \$KARMA. A 1M holder gets about \$4.98 back.
+Example: a \$2,000 swap pays the standard \$10 fee. A \$10,000 tier holder who pays their own gas gets about \$8.95 back in market-bought \$KARMA.
 
-Every dollar of cashback we credit is bought back on the open market. Holder fees do not sit in a treasury: they become \$KARMA buy volume, and then they become yours again.
+Why 90% at the top and not 100%: a fully waived fee is a buyback that never happens. At 90%, every trade at every tier keeps buying \$KARMA on the market, however large the trader gets. See [Buybacks](/buybacks) for how the whole engine fits together.
 
 ## What the KP multiplier applies to
 
-Karma Points earned on swaps and card purchases. KP determine your rewards tier (Seed / Rising / Elite / Black) and its cashback rate, so a higher multiplier compounds: you earn KP faster, climb tiers sooner, and the tier cashback on card spend grows with you.
+Karma Points earned on swaps and card purchases. KP determine your rewards tier (Seed / Rising / Elite / Black) and its cashback rate, so a higher multiplier compounds: you earn KP faster, climb tiers sooner, and your rewards grow with you.
 
-Holding 1M+ also unlocks the Rising tier directly, and 10M+ unlocks Elite, even before your KP would get you there.
+Holding \$2,500+ also unlocks the Rising tier directly, and \$10,000+ unlocks Elite, even before your KP would get you there. Black stays earn-only: it cannot be bought with holdings.
 
 ## Card fees
 
-Card fee benefits are an instant discount rather than cashback: 1M+ holders pay half the Karma service fee on card purchases, 10M+ holders pay none. The discount is applied at authorization, so the saving shows up on the receipt, not later.
-
-## If you still have staked \$KARMA
-
-Legacy staked balances keep counting toward your tiers, so nothing breaks. You can withdraw them to your wallet from the Rewards screen whenever you like (the old vault's 7-day cooldown still applies to the withdrawal itself). Once withdrawn, the tokens count the same as any held \$KARMA. New staking deposits are no longer possible.
+Card benefits are an instant discount rather than a rebate: \$2,500+ holders pay half the Karma service fee on card purchases, \$10,000+ holders pay none. The discount is applied at authorization, so the saving shows up on the receipt, not later.
 
 ## What holder benefits are *not*
 
-- **Not a yield product.** No APY, no emissions, no payouts for parking tokens. Cashback is a rebate on fees you actually paid, in proportion to your own trading.
-- **Not a lock-up.** Your tokens never leave your wallet. Sell any time; your tier simply adjusts.
+- **Not a yield product.** No APY, no emissions, no payouts for parking tokens. A rebate returns part of a fee you actually paid, in proportion to your own trading.
+- **Not a lock-up.** Your tokens never leave your wallet. Sell any time; your tier adjusts by the rules above.
 - **Not required.** Every Karma feature works without holding \$KARMA. Holding only makes it cheaper.
 
 ## Roadmap
 
-We may attach more benefits to holder tiers over time, such as higher card limits or early feature access. Anything material lands in the [changelog](/changelog) and on [@karmawallet](https://x.com/karmawallet) before it activates.
+We may attach more benefits to holder tiers over time, such as holder voting on the charity allocation and product roadmap, more price alerts, priority support, or early feature access. Anything material lands in the [changelog](/changelog) and on [@karmawallet](https://x.com/karmawallet) before it activates.
