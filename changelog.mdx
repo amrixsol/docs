@@ -8,7 +8,115 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 10, 2026
+
+### 📰 A Feed Worth Scrolling
+
+Links to X now render as quoted post cards instead of bare URLs, and tapping one opens the X app rather than a browser tab. Videos play inline, YouTube and TikTok included. Posts from the same author thread together. Position and P&L cards got a rebuild, with live market cap on them, and a back to top pill appears once you've scrolled a way down. The scroll itself is smooth now: video players no longer hitch the list as they mount.
+
+### ☰ Slide-Out Menu
+
+Swipe in from the left edge on home, explore, feed, friends and cards to reach your profile, wallets and settings. Tap through to anywhere without closing it first, and it no longer fights with the lists you're scrolling.
+
+### 💵 Two-Step Buys, Hands Free
+
+When a buy has to cross a chain to reach the token, you approve both steps once at the start and the second leg fires by itself the moment the first one lands. If the price drifts more than 5% while the quote is refreshed, the trade stops and asks you again instead of quietly filling at the new number.
+
+### 🐞 Smaller Fixes
+
+Sells on brand new launch pools work again after an upstream data source went dark for that pool type. Sends check your real balance before you sign and say plainly what's wrong, instead of failing at the last step. A refund whose first step timed out no longer gets stranded. Referral payouts survive a dropped transaction. Position rows stopped stacking on top of each other on home. Pasting a link into a post leaves your text alone and attaches a preview card. And headers no longer flash a raw route name for a frame.
+
+---
+
+## August 9, 2026
+
+### ⚡ Stock Buys, Much Faster
+
+Buying a Robinhood Chain stock with Solana cash used to sit for around half a minute on the first trade. It now skips a step that never applied, warms every stage ahead of you, and checks for the fill every second. First buys land in a fraction of the old time.
+
+### 📊 P&L You Can Trust
+
+Two accounting bugs are fixed. Dust from an unrelated token could claim the full value of a swap, and portfolios with more than a thousand trades stopped rebuilding partway through. Realized numbers on large, active accounts are correct again.
+
+### 🏅 Tier Timing, Explained
+
+Holder tiers use a 7 day average balance, so buying more \$KARMA doesn't promote you the same second. The rewards screen now says exactly that, and shows when your tier will catch up to your live balance.
+
+### 🐞 Smaller Fixes
+
+The keyboard no longer covers the edit post box or the token picker list. Explore stopped switching section tabs on an accidental horizontal swipe. Tabs preload the moment your finger lands, so switching feels instant. And live price updates at the head of a chart are steadier.
+
+---
+
+## August 8, 2026
+
+### ⚡ Balances That Update Themselves
+
+Deposits, sends and fills push to your screen the moment they land on chain, instead of waiting for the next refresh. And after a sell, your cash no longer disappears for half a minute before coming back.
+
+### 🔢 Trade in Token Counts
+
+The small ⇅ next to the amount flips between dollars and token count, on the buy side as well as the sell side. Type a token count and the dollar amount derives from the live price, or the other way around.
+
+### 📈 Better Fills on Cross-Chain Buys
+
+Solana buys funded from cash sitting on another chain now take the route that actually prices best. On one live order, the old path filled 4.3% worse than the new one on the same trade.
+
+### 🔔 More Price Alerts
+
+The cap on active price alerts per account goes from 25 to 50.
+
+### 🐞 Smaller Fixes
+
+Selling native ETH on Ethereum and Robinhood Chain works again. A closed position in one wallet no longer writes off a live bag held in another, which had turned a profitable trade into a reported loss. Trade bubbles sit on the line in line mode, instead of floating where a candle wick used to be. A cold chart paints immediately from the last known series and refreshes behind it, rather than timing out. Cross-chain staging delivers to the wallet you're actually using. The trade screen stops shoving itself around on the first keystroke, and the amount card stays visible while you type.
+
+---
+
+## August 7, 2026
+
+### 💜 \$KARMA v2 Rewards Are Live
+
+Every trade you make earns a rebate. It's credited in dollars, converted into \$KARMA at the moment you earn it, and claimable instantly, so simply using the app dollar cost averages you into the token. Your tier is set by the dollar value of your \$KARMA, averaged over 7 days, and higher tiers rebate more. v1 era balances and the old claim flow are retired; this is a clean start on v2.
+
+### 🎁 Rewards Screen, Rebuilt
+
+Benefits are front and centre, led by a savings card showing what Karma's fees saved you against a typical wallet this month, with the tier ladder in dollars and referrals folded into Earn more. There's a rewards button in the top right on home, and History joins Send and Swap in the home quick actions.
+
+### ⛓️ Ethereum Mainnet Trading
+
+Buying and selling on Ethereum is live. Mainnet USDC counts as cash, so a buy spends money that's already there instead of bridging to reach it. Sells settle into mainnet USDC and stay there. Same-chain fills go direct with gas sponsored, so you don't need to hold ETH to trade.
+
+### 🧭 Honest Routes and Costs
+
+The trade sheet names the venue and marks the chains your cash crosses. Crossing cost is shown as the flat dollar fee it is, instead of being billed as price impact, which used to make small trades look far more expensive than they were. And a refused trade gives the real reason: "try a smaller amount" no longer appears when size was never the problem.
+
+### 🐞 Smaller Fixes
+
+A \$750 stock bag and a fresh launch could render as \$0.00 or an absurd fraction of a cent. Prices are now anchored to the chain a token actually lives on, and a missing price shows as missing rather than as zero. An unpriced position was being filed as a scam airdrop and vanishing from home. A live position read as "Sold" on its feed card. Buys on Ethereum credit your holdings immediately, so the sell panel doesn't read zero. Another wallet app's "upgrade to smart account" prompt could leave a Base bag unsellable, and that's handled now. Mainnet trades no longer idle for minutes on too small a tip. Timeframe switching on charts is instant, and ALL now really means all of a token's history.
+
+---
+
 ## August 6, 2026
+
+### 👥 Community Trade Bubbles on Charts
+
+Public holders' fills now appear on the token chart as their avatars, right where they bought or sold. Your own face on your own fills. The switch flips between just your trades and the whole community, and it's on by default.
+
+### 📊 Token Vitals and Holder Entries
+
+Market cap, 24 hour volume, liquidity and 24 hour change sit in one row on the token page. Holder rows show each holder's average entry market cap, so you can see who's up and from where.
+
+### 💸 Send From One Balance
+
+Sending to an 0x address now spends from a single Cash row and bridges your Solana cash at send time. Stablecoin bridge legs are fee free.
+
+### 🏦 Paused Deposits, Surfaced
+
+If a deposit route on a bank account is paused, the account says so, instead of showing a copyable IBAN into an account that can't receive.
+
+### 🐞 Smaller Fixes
+
+Sells on Robinhood Chain default to more headroom so exits actually land, and volatile first buys get steered onto a route that works. A token that merely can be paused by its issuer no longer hard blocks buys when its source is verified. Wallet import registers the signer without an app restart, and importing an Ethereum key no longer hits a stale "you already have one" block. Post text stopped clipping mid word. Explore falls back to the last good list instead of showing nothing when a chain's trending data is unavailable. Runner tokens keep their live candle. And the trade screen no longer strands a keyboard panel behind a sheet.
 
 ### 🏆 Leaderboard, Corrected
 
