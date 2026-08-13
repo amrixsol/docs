@@ -10,73 +10,118 @@ All updates and announcements in one place. We're building towards a community p
 
 ## August 13, 2026
 
-### 📈 Stock Tokens Get Their Own Page
+### Stock tokens
 
-Token detail is now built for an equity instead of a memecoin. The share price leads, and beside it sits the answer to the question a flat line actually raises: is the market open. Bid, ask, spread, day range, session, volume in shares, overnight tradability and asset class replace the crypto rows that described the wrapper rather than the company. Dividends and splits are on the page for the first time, along with an issuer block explaining what these assets legally are. If the underlying stock is halted, you get a banner, because the token keeps trading on chain while the real stock is frozen.
+Token detail is now built for an equity rather than a memecoin. The page led with the market cap of the tokenised wrapper, a few million dollars where the reader sees NVIDIA. It now leads with the share price.
 
-After a split, your position shows the underlying share count, so a balance that never moves stops looking like a bug. Charts default to a line for stocks, which is what the data honestly supports, with candles a tap away and the preference kept separate from your memecoin charts.
+- **Equity data replaces crypto data.** Bid, ask, spread, day range, session, volume in shares, overnight tradability and asset class, in place of market cap, supply, liquidity and pair age.
+- **Market session on the hero.** A chart that has been flat for sixteen hours reads as "Market closed" instead of a broken price, with the next session boundary underneath.
+- **Dividends and splits.** Full corporate action history, surfaced for the first time. A dividend is applied through a multiplier, so your raw balance never moves and the income was otherwise invisible.
+- **Post-split share count.** Your position shows the underlying shares, so a balance that stays put through a four-for-one split no longer reads as a bug. A scheduled corporate action is flagged in advance.
+- **Trading halts.** A banner when the underlying stock is halted, since the token keeps trading on chain while the real market is frozen.
+- **Issuer disclosure.** These are debt securities issued by Robinhood Assets (Jersey), not shares and not a claim on the company. That now sits on the page rather than only in the terms.
+- **Line charts by default.** The price feed publishes on deviation and the underlying market is shut for most of any multi-day window, which turned candle charts into stranded bars joined by dotted rails. Candles remain one tap away, with the preference stored separately from memecoin charts.
+- **Twelve more tokens priced off their own issuer feed.** GME, ASML, MSTR, TSM, DELL, CLSK, EWY, IONQ, NBIS, RGTI, RKLB and CUSO were priced off side pools holding a few hundred dollars. Two instances of the app could quote ASML nearly \$20 apart.
 
-Twelve more stock tokens (GME, ASML, MSTR, TSM, DELL, CLSK, EWY, IONQ, NBIS, RGTI, RKLB and CUSO) now price off their own issuer feed instead of a tiny side pool. Two instances of the app could previously quote ASML nearly \$20 apart.
+### Trade safeguards
 
-### 🛡️ Trades That Refuse to Fill Badly
+- A swap can no longer deliver materially less than the quote it was signed against, on any route.
+- Routes through pools whose fee is itself the trap are refused before execution.
+- Two internal ceilings were being reported to you as market conditions. Both are tightened, so "the price is moving" now means the price is genuinely moving.
 
-A swap can no longer deliver far less than the quote you signed against, on any route. Routes through pools whose fee itself is the trap are refused outright. And two of our own ceilings that were being reported as market conditions got tightened, so "the price is moving" now means the price is actually moving.
+### Pricing reliability
 
-### 💵 Live Prices Stay Live
+- Live pricing could stall across the whole app when a single upstream route hung. One slow source can no longer take the ticker down with it.
+- A price source with no liquidity floor could serve a quote drawn from an empty pool. Those are now rejected before they reach you.
 
-Live pricing could freeze across the app when a single upstream route hung. One slow source can no longer take the whole ticker down. A price rung with no liquidity floor could also serve a quote from an empty pool, which is now rejected before it reaches you.
+### Fixes
 
-### 🐞 Smaller Fixes
-
-Trading history was only booking half of a token to token swap, so a later sell could record a \$0 result. Both sides are now recorded, and affected positions were repaired. Explore no longer fetches two lists you aren't looking at every time you open it, and Stocks and Perps sit ahead of Launches in the tab strip. Leaderboard opens noticeably faster on a cold start. Pull to refresh no longer spins behind the status bar on Leaderboard and Cards. Feed threads stopped chaining a person's posts about different coins together. YouTube embeds play, and TikTok and Instagram links now try. And a Robinhood Chain trade opens the right explorer instead of a 404.
+- A token-to-token swap recorded only the half that was sold, so a later sale could book a \$0 result. Both legs are now recorded and affected positions were repaired.
+- Explore no longer loads two lists you are not looking at on every open, and Stocks and Perps sit ahead of Launches in the tab strip.
+- Leaderboard opens substantially faster from cold.
+- Pull to refresh no longer spins behind the status bar on Leaderboard and Cards.
+- Feed threads no longer chain together a person's posts about different tokens.
+- YouTube embeds play, and TikTok and Instagram links now attempt playback.
+- A Robinhood Chain trade opens the correct block explorer instead of a 404.
 
 ---
 
 ## August 12, 2026
 
-### 🏆 Leaderboard, Split in Two
+### Leaderboard
 
-Karma's own Top traders and a new Influencers board now sit behind a switch. Rows carry rank movement against where they stood a day ago, so you can see who is climbing rather than just who is on top. A sticky rank dock follows you down the page once the hero scrolls away, timeframe pills moved above the hero they were quietly rewriting, and switching timeframe no longer leaves the previous window's rows on screen.
+- **Two boards.** Karma's own Top traders and a new Influencers board, behind a segmented switch.
+- **Rank movement.** Each row carries its change against where it stood roughly a day ago, so the board shows who is climbing, not only who is on top.
+- **Layout.** A sticky rank dock follows you once the hero scrolls away, and the timeframe pills moved above the hero they were rewriting from below.
+- **Timeframe switching.** Changing the window no longer leaves the previous window's rows on screen while the new ones load.
 
-### ⚡ Trades That Land on Fast Movers
+### Trade execution on volatile tokens
 
-In one session, 119 of 333 swaps on a fast moving token failed, every one because the price outran the slippage band between signing and inclusion. Slippage is now priced off the token's own realized movement over the last 30 seconds: calm tokens keep the tight automatic band, movers get a wider one, and the retry ladder scales off the band that actually fired instead of fixed steps that could sit below it. A prepared trade whose market has moved is thrown away and rebuilt, which costs a fraction of a second instead of a failed fire.
+In one session, 119 of 333 swaps on a fast-moving token failed. Every one was the price outrunning the slippage band between signing and inclusion.
 
-Balances keep up too. Your cash on home moves the moment you tap rather than waiting on the next refresh, and rapid trading no longer leaves the screen stuck behind its own optimistic lock. Limit orders show a profit and loss preview before you place them.
+- Slippage is now priced off the token's own realised movement over the preceding 30 seconds. Calm tokens keep the tight automatic band; movers get a wider one.
+- The retry ladder scales off the band that actually fired, rather than fixed steps that could sit below it and guarantee a second failure.
+- A prepared trade whose market has since moved is discarded and rebuilt. That costs a fraction of a second instead of a multi-second failed fire.
+- Your cash on home updates the moment you tap, rather than waiting for the next portfolio refresh, and rapid trading no longer leaves the screen stuck behind its own optimistic lock.
+- Limit orders show a profit and loss preview before you place them.
 
-### 🎯 Prices You Can Trust
+### Pricing accuracy
 
-The worst of it: a near empty side pool was defining a stock token's price, reading roughly 60% above the real market, and stale prices were being served as live. Both are fixed. A pricing pool that disagrees with the open market is now rejected instead of trusted, "we couldn't check the market" is no longer treated as "the pool checks out", and the last known price the app falls back to now expires instead of lingering. A rate limit on one source no longer freezes prices on Base, Ethereum and Robinhood Chain.
+- **A near-empty side pool was defining a stock token's price**, reading roughly 60% above the real market. Fixed.
+- **Stale prices were being served as live.** Fixed.
+- A pricing pool that disagrees with the open market is now rejected rather than trusted, and "we could not check the market" is no longer treated as "the pool checks out".
+- The last known price the app falls back to now expires instead of lingering indefinitely.
+- A rate limit on one source no longer freezes prices across Base, Ethereum and Robinhood Chain.
 
-### 🚨 Honeypot Protection
+### Honeypot protection
 
-The trap check now measures what a real holder would actually receive when they sell, not just whether the sell reverts. That caught a token whose hook confiscates about 99.9% of an app buyer's sale, which is now blocked. The About report runs the same verdict, so it can no longer say "Looks clean" about a confiscation trap, and nothing anywhere renders "clean" for something we couldn't verify. A honeypot that traps holders used to be reported as "price is moving fast", which told you nothing.
+- The trap check now measures the value a real holder would receive when selling, not merely whether the sale reverts.
+- That caught a token whose hook confiscates approximately 99.9% of an app buyer's sale. Buys are blocked.
+- The About report runs the same verdict, so it can no longer report "Looks clean" on a confiscation trap, and nothing in the app renders "clean" for a check that could not be completed.
+- A honeypot that traps holders was previously surfaced as "price is moving fast", which told you nothing actionable.
 
-### 🐞 Smaller Fixes
+### Fixes
 
-The home hero counted your cash twice. Sell all right after a buy could overshoot your real balance. The keyboard sat on top of the comment you were typing. Cross chain buys were booking the quoted amount rather than the amount you actually received, which left dust rows behind after a full sell. Cross chain trading on Ethereum is enabled, having shipped live but unfundable. A re-entered token's Closed card showed every round you ever traded rather than the one that just ended. And feed cards stopped pricing Robinhood Chain tokens off an hour old chart point.
+- The home hero counted your cash twice.
+- Sell all immediately after a buy could overshoot your real balance.
+- The keyboard covered the comment box while you were typing.
+- Cross-chain buys recorded the quoted amount rather than the amount actually received, leaving dust rows behind after a full sell.
+- Cross-chain trading on Ethereum is enabled. The chain had shipped live but was unfundable.
+- A re-entered token's Closed card showed every round ever traded rather than the round that had just ended.
+- Feed cards no longer price Robinhood Chain tokens off an hour-old chart point.
 
 ---
 
 ## August 11, 2026
 
-### 💸 Cross-Chain Buys Cost Less and Dead-End Less
+### Cross-chain buys
 
-A cross chain buy used to be quoted twice to promise you an exact token count, and that guarantee was costing about 2.2% of the trade, hidden in the rate rather than shown as a fee. Now you spend exactly the dollar amount you typed and the token count is an estimate, which is the honest way round. Deeper pools go straight through in one shot instead of taking the slower two step path.
+- **The exact-token-count guarantee is gone, and with it about 2.2% of the trade.** A cross-chain buy was quoted twice to promise a precise token count, and the cost of that promise was carried in the exchange rate rather than shown as a fee. You now spend exactly the amount you typed, with the token count quoted as an estimate.
+- **Deeper pools route in a single step** instead of taking the slower two-leg path.
+- **A refunded buy reroutes itself** rather than dead-ending, on Base and Ethereum as well as Robinhood Chain.
+- **SOL funds tokens that need the two-leg route.** Previously the quote was simply refused.
+- **A half-finished reroute resumes from where the money stopped**, so a second tap can never spend twice.
 
-If a buy bounces and refunds, the app now reroutes it by itself rather than leaving you at a dead end, on Base and Ethereum as well as Robinhood Chain. Buying with SOL works for tokens that need the two step route, where before it simply refused. A half finished reroute remembers where your money stopped and resumes from there, so a second tap can never spend twice.
+### Cash across chains
 
-### 👛 Every Cash Pocket Shows Up
+Ethereum USDC was visible on home but untouchable on the swap screen: no chain filter, no held row, no search result. The token picker now surfaces every cash balance you hold on every chain, each with a quick-select chip.
 
-Ethereum USDC was visible on home but untouchable on the swap screen: no chain filter, no row, no search result. The picker now injects every cash pocket you hold, on every chain, with a quick chip for each.
+### Feed
 
-### 📰 Feed Cards That Tell the Truth
+- A run of trades on one token groups into a single card per session, even when other people traded in between.
+- The card states whether the trader is still in the position or has closed out.
+- An open position shows what it is worth now, rather than only the size deployed.
+- Versus cards compare like with like, market cap against market cap, and 377 older posts were backfilled so they render correctly.
+- Cards open on the last live price you saw, rather than a post-time snapshot that corrects a beat later.
 
-A run of trades on one token now groups into a single card per session, even when other people traded in between, and the card says whether the trader is still in or has closed out. An open position shows what it is worth right now instead of just the size deployed. Versus cards compare like with like, market cap against market cap, and 377 older posts were backfilled so they render properly. Cards open on the last live price you saw rather than a post time snapshot that jumps a beat later.
+### Fixes
 
-### 🐞 Smaller Fixes
-
-One push per buy, and none while you're already watching the trade. The receive side of a swap now prices off the receive token's own live market, so both sides no longer read identically and hide fees and impact entirely. Selling one token no longer blanks the Sell button on everything else you hold. A final on chain revert re quotes quietly instead of showing a raw error. Card fee transfers confirm on chain and re send if they expire. And card sync no longer errors when the issuer reports a card the app has never seen.
+- One push notification per buy, and none while you are already watching the trade.
+- The receive side of a swap prices off the receive token's own live market. Both sides previously read identically, hiding fees and price impact entirely.
+- Selling one token no longer disables the Sell button on everything else you hold.
+- A final on-chain revert re-quotes quietly instead of surfacing a raw error.
+- Card fee transfers confirm on chain and re-send if they expire.
+- Card sync no longer errors when the issuer reports a card the app has not seen before.
 
 ---
 
