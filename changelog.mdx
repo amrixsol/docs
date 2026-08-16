@@ -4,7 +4,68 @@ sidebarTitle: "Changelog"
 description: "Product updates and announcements"
 ---
 
-All updates and announcements in one place. We're building towards a community portal combining changelogs, proposals, and holder votes—making Karma a true community-driven product.
+All updates and announcements in one place. We're building towards a community portal combining changelogs, proposals, and holder votes, making Karma a true community-driven product.
+
+---
+
+## August 16, 2026
+
+### Best execution on Solana
+
+- **Every Solana trade now routes to whichever venue delivers the most tokens.** Venues are compared on what you actually receive after fees, and the comparison runs again immediately before you sign, so a route that was ahead when the quote was built cannot quietly fall behind by the time the trade fires. The refusal on extreme price impact remains the last line, for when no venue offers an acceptable fill.
+- **The receive amount you see now matches the fee the signed route charges**, including the floor that applies to very small orders and the waiver on trades under a dollar. The preview could previously understate it.
+
+### Fixes
+
+- A token page could take its price, market cap, fully diluted value, name and links from a market where the token you opened was the other half of the pair, inheriting the other coin's supply figures. All of it now comes only from a market that describes the token you asked for.
+
+---
+
+## August 15, 2026
+
+### Fixes
+
+- **Same address, two chains.** A token deployed at the same contract address on Base and on Robinhood Chain could show one chain's price on the other chain's page, inflating market cap several times over and attaching a balance you hold elsewhere. Prices, balances, holdings and P&L are now keyed to the chain as well as the contract, so a sell can never borrow another chain's balance.
+- A buy that one venue could not execute was surfaced as "price is moving fast". Karma now confirms the route can actually execute before you sign, falls back to the fully safety-gated alternative when it cannot, and says so plainly when no venue can fill it.
+- The invite code editor no longer disappears behind the keyboard on Android.
+- Average entry and exit labels stay inside the chart instead of clipping past the right edge.
+
+---
+
+## August 14, 2026
+
+### Live prices everywhere
+
+Prices, balances, position values and P&L now move as the market moves, across Home, Explore, Feed, token detail, profiles and the leaderboard, rather than waiting for a refresh.
+
+- Only the digits that actually changed roll. Punctuation stays fixed, the direction follows the value, and Reduced Motion is respected.
+- Percentages animate directly beneath the price they belong to and re-mark from the same day open, so the two can no longer contradict each other.
+- Token detail and the trading terminal it opens into share one price source, so the header, market cap, holding value and P&L always agree.
+- Trailing zeroes that carry no information are trimmed as a price settles, without the rest of the number remounting.
+
+### Sending
+
+- **USDG sends directly on Robinhood Chain.** It was previously folded into a single cash row and converted to Base USDC on the way out. USDG is now a first-class row backed by your live balance, with the network labelled through selection, review and confirmation, and Max moving the full balance without stranding dust.
+- **A send is reported as sent only once it is confirmed on chain.** Until then the same signed transaction re-broadcasts itself until it either confirms or its window expires, so a transaction that was accepted and then dropped can no longer read as success.
+- The recipient and amount fields no longer duplicate, drift or hide behind the keyboard on iOS.
+
+### Referrals
+
+- **Referral earnings now pay out once a week, every Thursday**, as a single payday rather than an hourly trickle. Every pending earning is included in the batch, however large it has grown.
+
+### Deposits from outside Karma
+
+- Tokens and cash sent into your Karma wallet on Base, Ethereum and Robinhood Chain now notify you as they land, and Home reflects them straight away instead of leaving them visible only in history.
+
+### Fixes
+
+- **Native ETH on Robinhood Chain was priced off a pool holding about \$2.** That returned a \$7,623 ETH, valued a real 0.0954 ETH quote at \$727 instead of \$179, and put a false "no real liquidity" warning on the page. It now prices off the deep market the executable route uses.
+- Token-to-token trades on Robinhood Chain showed no receive amount when the final check on an otherwise healthy route was rejected. A fallback through each token's main market is now simulated end to end before it is shown, charges the fee once, and rolls back completely if either leg moves before execution.
+- Live numbers could get stranded dim and half-transitioned until the screen was reopened, or overlap into unreadable glyphs mid-tick.
+- An absolute price move no longer shows more decimal places than the price it describes.
+- Revealing card details and PIN works again.
+- On iPhone, the tab bar no longer strands position rows underneath it, and it uses the system's own material instead of an opaque panel.
+- A gasless route could produce a signed order the venue then rejected. The allowance is checked first, and the trade falls back to the sponsored route rather than failing after you sign.
 
 ---
 
@@ -33,6 +94,21 @@ Token detail is now built for an equity rather than a memecoin. The page led wit
 
 - Live pricing could stall across the whole app when a single upstream route hung. One slow source can no longer take the ticker down with it.
 - A price source with no liquidity floor could serve a quote drawn from an empty pool. Those are now rejected before they reach you.
+
+### Charts
+
+- **A series now comes from one source, end to end.** Joining one provider's history onto another's live tip produced steps and phantom moves at the seam. Every chart is now built from a single source for its whole length.
+- Solana 4 hour and 1 day charts drew every period twice, two prices apart.
+- Daily closes were being filed a day early.
+- The app no longer paints a placeholder chart while the real one loads, so the first frame you see is the real one. The history also stops reshaping itself half a minute after you open a token.
+- Charts load noticeably faster from cold.
+
+### Positions and P&L
+
+- **Position P&L follows the position you have open now.** Selling a token down to zero and buying back in no longer carries the previous round's profit or loss into the new bag. Profit realised by partial sells within the same position is still counted, and lifetime performance remains on token detail, labelled All-time P&L.
+- Home and token detail no longer disagree on what a position is worth, or briefly show the wrong sign, while prices are updating.
+- Home keeps your balance, cash and position rows on screen through a pull to refresh instead of flashing an empty skeleton.
+- On a cold start, a saved Robinhood Chain balance is checked against the chain before it is shown, rather than presenting a pre-trade number as current.
 
 ### Fixes
 
