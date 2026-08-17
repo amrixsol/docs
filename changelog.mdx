@@ -8,7 +8,53 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 17, 2026
+
+### Stocks
+
+Explore's Stocks tab is live. The coming soon state and the old wrapped-equity feed are gone, replaced by the full Robinhood Chain catalog: 194 assets, priced from the official registry.
+
+- **The catalog.** Search by company or ticker, filter Stocks or Funds, sort by volume, name or price, with live prices on the rows, market session, halt state, verified company logos and a direct path into trading.
+- **A brokerage screen, not a token screen.** Stocks open on 1D with a line chart and 1D, 1W, 1M, 3M and MAX ranges, prices to two decimals, and an above-fold snapshot with day range, bid, ask, share volume and market session. Crypto keeps its own controls and candles.
+- **Crypto furniture is gone from stock pages.** Contract pills, community bubbles, holder and contract sections, wrapper safety checks and candle controls do not describe an equity, so they no longer appear on one.
+- **Company financials in the app.** Annual and quarterly revenue, net income, diluted EPS and free cash flow, charted with honest zero baselines and negative values, each figure traceable to the filing it came from. Current filings now win over retired accounting tags, so NVIDIA's revenue resolves to FY2026 rather than FY2022.
+- **Filings and corporate actions on one timeline.** 10-K, 10-Q and 8-K reports alongside dividends and splits, with an in-app reader restricted to sec.gov.
+- **The issuer relationship, stated plainly.** Three steps: the underlying company or ETF, the Robinhood token that tracks its price, and the tokenised debt security you actually hold. Where a fund, private company or unmapped issuer has no data to show, the page says so rather than inventing it.
+
+### Live prices on Robinhood Chain
+
+- **Prices move when the market moves.** A swap landing in the pool now reaches your screen straight away instead of waiting for the next refresh.
+- Every genuine tick reaches both the price and the chart, including moves in the sixth and seventh decimal that used to round away to the same number, and the chart's live tip pulses on each real change.
+- If the connection drops, prices fall back to the previous refresh behaviour on their own.
+
+### Pricing accuracy
+
+- **Pump.fun tokens now report the market cap the venue itself reports**, using its launch supply convention instead of circulating supply, which closes a systematic gap of roughly 5%. Those tokens also mark against their own market.
+- Explore trending, search and watchlist rows paired a fresh live price with a stale market cap. Both now come from the same basis on every tick, and stay coherent when you open the token.
+- A long-tail Solana token missing from the main price source now reaches the backup in seconds rather than sitting unpriced.
+
+### Fixes
+
+- **Stock buys could report "Quote unavailable" even when your cash covered the order.** Stock purchases now stage cash into Robinhood Chain USDG and execute on the market that supports them, with previews that match what will actually execute, including cash split across Solana, Base and Ethereum and orders under \$2.
+- **Quiet 1H and 4H charts drew an old move as a fresh crash.** One token with no trades for ten hours read as down 74% when it had not moved at all. Bounded ranges now use real wall-clock windows and carry the last close through quiet periods, so the live tick occupies one slot rather than stretching across half the chart.
+- A stale third-party aggregate could put the correct pricing pool into a ten-minute quarantine. Only a fresh verdict naming a different deepest pool can do that now, and a quarantined pool gets a recovery check every minute.
+- Explore could report "Stocks are unavailable right now" on older devices while the catalog was perfectly healthy.
+- Official stock tokens no longer appear in Explore's Trending list. They have their own tab.
+
+---
+
 ## August 16, 2026
+
+### Transfers between your own wallets
+
+- **Move any asset between your own Karma wallets without pasting an address.** Each wallet under **Your wallets** now carries both its Solana address and its linked EVM address, so Robinhood Chain, Base and Solana assets all have somewhere to go.
+- The asset picker shows every compatible holding across the destination's networks and routes to the matching address automatically. The header, fee, recipient details and confirmation all follow the network you picked.
+- Wallets that hold both are labelled **Solana + EVM**, so a destination no longer reads as USDC only, and a transfer to your own wallet skips the external-address warning while pasted addresses and contacts keep theirs.
+
+### Review before biometrics
+
+- If you have per-transaction biometrics turned on, a review sheet now shows the amount, estimated receive, price impact, network cost, maximum slippage, estimated entry or exit market cap and the route before authentication starts. On Android the fingerprint prompt itself repeats the amount and asset instead of covering them with generic copy.
+- Affordability is re-checked after the review, and details are cleared on cancellation or failure so they can never appear on the next prompt.
 
 ### Best execution on Solana
 
@@ -18,6 +64,9 @@ All updates and announcements in one place. We're building towards a community p
 ### Fixes
 
 - A token page could take its price, market cap, fully diluted value, name and links from a market where the token you opened was the other half of the pair, inheriting the other coin's supply figures. All of it now comes only from a market that describes the token you asked for.
+- **Max on a native SOL sell now leaves a small reserve for network fees**, on the amount shown, the quote and the execution alike, so selling your whole balance no longer fails outright. Older app versions are protected from the server side too.
+- A trade on Robinhood Chain could report insufficient funds when your balance was perfectly sufficient.
+- Balances stop polling while the app is in the background, and refresh the moment you come back, after a trade, or on pull to refresh.
 
 ---
 
