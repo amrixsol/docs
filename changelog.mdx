@@ -8,24 +8,102 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 22, 2026
+
+### Buybacks, fully accounted for
+
+- **The public stats dashboard now includes the KARMA bought to fund holder cashback**, alongside treasury and reserve buybacks. The headline separates both sources, while the combined total shows the full amount of protocol-funded buying.
+- The buyback ledger is grouped into one row per UTC day, with total dollars deployed, KARMA bought and transaction count. Expand a day to inspect every purchase and its on-chain receipt.
+- The money-flow diagram now explains the cashback inventory path separately from the 95/5 treasury and charity split, and remains readable from desktop down to mobile.
+
+### Private-profile polish
+
+- Private profile owners can see their own activity again, and accepted followers retain the holder and community-trade context they are entitled to see. Anonymous visitors, strangers and blocked accounts remain excluded.
+- Opening privacy controls no longer causes the profile underneath to jump or rebuild. The sheet follows native platform behaviour, respects safe areas and can be dismissed naturally.
+
+### Trading and positions
+
+- Swap previews now price hypothetical trades even when the entered amount is larger than the wallet's current balance. Balance, approval, gas and safety checks still apply before execution.
+- Robinhood Chain positions once again show **Bought** and **Sold** totals for newly listed and long-tail tokens and, when a valid live price is available, all-time P&L.
+
+---
+
+## August 21, 2026
+
+### Private profiles
+
+- **Profiles can now be public or private.** A private account keeps its public identity and can still participate in the leaderboard, while balances, holdings, entries, exits and history are released only to accepted followers.
+- Following a private account becomes a request. Owners can accept, optionally follow back, remove followers or block an account, with the relationship cleaned up consistently across feed, search, holders and activity.
+- Privacy and leaderboard visibility have separate controls. Leaving the leaderboard is immediate; the seven-day cooldown applies only when rejoining.
+- Follow requests and privacy status are now visible where people expect them: on the profile, in Connections and in settings, with clear loading, refresh and outcome states.
+
+---
+
+## August 20, 2026
+
+### Cashback credited exactly once
+
+- Cashback and referred-trader rebates now remain accurate when a completed trade is refreshed more than once.
+
+### Safer market selection everywhere
+
+- Price and market-cap selection is now more consistent across P&L, leaderboard, Trending, watchlists, feeds, sparklines and portfolio valuation.
+
+---
+
+## August 19, 2026
+
+### Charts that open current
+
+- 1H and 4H charts across Solana, Base and Ethereum now open with current data instead of correcting themselves after you arrive.
+- Quiet markets keep their real wall-clock shape without collapsing into an empty grid or one oversized candle. Sparse windows use a continuous line until enough genuinely traded bars exist for candles.
+- Quiet periods no longer draw a false bright rail or leave the live tip floating away from the series.
+
+### Pricing accuracy
+
+- Token detail and the rest of the app now prefer the same reliable reference market, keeping search, prices, market caps, charts and portfolio values aligned.
+
+---
+
+## August 18, 2026
+
+### Trading costs before you sign
+
+- The trade sheet now labels the all-in gap as **Trading cost**, because it can include token transfer taxes, pool fees and market movement—not only price impact.
+- Quotes with an estimated cost of 5% or more require an explicit review. Recognized tokens with an explicitly declared transfer fee show that tax in red with the asset symbol, instead of receiving a green safety verdict that hides the known fee.
+- Position cost basis is labelled **Avg cost · fees included**, making the relationship between entry cost and the chart price clearer.
+
+### Cleaner portfolio history
+
+- Confirmed price glitches have been removed from portfolio history without hiding legitimate deposits or lasting balance increases.
+- Unknown Solana assets remain unpriced until a reliable live source can value them.
+
+### Honest quiet charts and daily stats
+
+- Synthetic zero-volume chart tails no longer look like fresh trading activity; the spacing remains truthful while only real candles are drawn.
+- Copy Lab volume and trade counts now use the same day boundary as the rest of Karma's public protocol stats, keeping daily bars and 1D, 7D and 30D totals aligned.
+
+---
+
 ## August 17, 2026
 
 ### Stocks
 
 Explore's Stocks tab is live. The coming soon state and the old wrapped-equity feed are gone, replaced by the full Robinhood Chain catalog: 194 assets, priced from the official registry.
 
-- **The catalog.** Search by company or ticker, filter Stocks or Funds, sort by volume, name or price, with live prices on the rows, market session, halt state, verified company logos and a direct path into trading.
+- **The catalog.** Search by company or ticker, filter Stocks or Funds, sort by Featured, name or price, with live prices on the rows, market session, halt state, verified company logos and a direct path into trading.
 - **A brokerage screen, not a token screen.** Stocks open on 1D with a line chart and 1D, 1W, 1M, 3M and MAX ranges, prices to two decimals, and an above-fold snapshot with day range, bid, ask, share volume and market session. Crypto keeps its own controls and candles.
 - **Crypto furniture is gone from stock pages.** Contract pills, community bubbles, holder and contract sections, wrapper safety checks and candle controls do not describe an equity, so they no longer appear on one.
 - **Company financials in the app.** Annual and quarterly revenue, net income, diluted EPS and free cash flow, charted with honest zero baselines and negative values, each figure traceable to the filing it came from. Current filings now win over retired accounting tags, so NVIDIA's revenue resolves to FY2026 rather than FY2022.
 - **Filings and corporate actions on one timeline.** 10-K, 10-Q and 8-K reports alongside dividends and splits, with an in-app reader restricted to sec.gov.
 - **The issuer relationship, stated plainly.** Three steps: the underlying company or ETF, the Robinhood token that tracks its price, and the tokenised debt security you actually hold. Where a fund, private company or unmapped issuer has no data to show, the page says so rather than inventing it.
 
-### Live prices on Robinhood Chain
+### Live prices across chains
 
 - **Prices move when the market moves.** A swap landing in the pool now reaches your screen straight away instead of waiting for the next refresh.
 - Every genuine tick reaches both the price and the chart, including moves in the sixth and seventh decimal that used to round away to the same number, and the chart's live tip pulses on each real change.
 - If the connection drops, prices fall back to the previous refresh behaviour on their own.
+- Focused token screens on Base, Ethereum and Solana now receive live price updates too, with the existing refresh behaviour available if a live connection drops.
 
 ### Pricing accuracy
 
@@ -33,8 +111,18 @@ Explore's Stocks tab is live. The coming soon state and the old wrapped-equity f
 - Explore trending, search and watchlist rows paired a fresh live price with a stale market cap. Both now come from the same basis on every tick, and stay coherent when you open the token.
 - A long-tail Solana token missing from the main price source now reaches the backup in seconds rather than sitting unpriced.
 
+### Instant search
+
+- Global search now matches crypto tokens and public profiles immediately from a small on-device identity cache, then refreshes from the live index in the background. Rapid typing cannot let an older response replace the current query.
+- Stock results keep their dedicated first section, while official Robinhood stock tokens remain excluded from generic crypto results and Trending.
+
+### Karma economics
+
+- Copy Lab volume and trade counts now appear in public protocol stats, using the same daily accounting basis as customer swaps.
+
 ### Fixes
 
+- Fixed a startup crash that could affect Explore.
 - **Stock buys could report "Quote unavailable" even when your cash covered the order.** Stock purchases now stage cash into Robinhood Chain USDG and execute on the market that supports them, with previews that match what will actually execute, including cash split across Solana, Base and Ethereum and orders under \$2.
 - **Quiet 1H and 4H charts drew an old move as a fresh crash.** One token with no trades for ten hours read as down 74% when it had not moved at all. Bounded ranges now use real wall-clock windows and carry the last close through quiet periods, so the live tick occupies one slot rather than stretching across half the chart.
 - A stale third-party aggregate could put the correct pricing pool into a ten-minute quarantine. Only a fresh verdict naming a different deepest pool can do that now, and a quarantined pool gets a recovery check every minute.
@@ -2903,4 +2991,3 @@ Various improvements have been made across our documentation portal to provide c
 ### ⚡ Faster Payment Rails
 
 We've upgraded our payment infrastructure to support ACH Same-Day and SEPA Instant transfers, significantly reducing withdrawal times. To support these premium rails while keeping Karma self-sustainable during this early stage, off-ramps now include a small flat fee: \$1.45 for SEPA and \$0.95 for ACH Same-Day. We remain committed to keeping fees as low as possible as we continue to grow.
-
