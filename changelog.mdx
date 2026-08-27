@@ -8,7 +8,59 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 27, 2026
+
+### Faster orders, clearer progress
+
+- Token review now happens before the final Buy press, so accepted orders can move from signing to broadcast without repeating the same checks.
+- As soon as an order is durably accepted, Karma shows **Order placed** and adds a provisional position while final settlement continues in the background. Leaving the trading screen no longer interrupts reconciliation, and a verified failure removes only the affected order.
+- Robinhood Chain buys funded from another network now take a direct whole-order route when one cash balance can cover them. Split balances retain the existing consolidation route, with the next step prepared earlier to reduce waiting.
+
+### Native ETH on Robinhood Chain
+
+- Native ETH buys now complete through a verifiable Robinhood Chain route, whether the order starts with USDG or cash staged from another network.
+- The receive amount, destination wallet and completed delivery are verified before the trade is finalized, while unsuccessful post-staging attempts keep the user's cash available for another order.
+
+### Faster startup and Face ID
+
+- App lock and Face ID now become ready from local security preferences instead of waiting on remote wallet data.
+- Background refreshes, profile preloads and signing-session warmup wait until after the first unlocked frame, reducing startup work without weakening session or lock protection.
+
+### Durable posts and position history
+
+- Feed posts now recover safely after a lost connection, restart or missing response. Retrying the same text, image, carousel, GIF or versus post will not create a duplicate.
+- Cross-chain buys into Solana retain their verified Bought total and cost basis during portfolio rebuilds, keeping position history and P&L intact.
+
+---
+
 ## August 26, 2026
+
+### Faster, more dependable trading
+
+- Quotes now recover more gracefully from brief market-data and routing interruptions, while every balance, token-safety and destination check remains in place before funds move.
+- Same-chain orders and staged Robinhood Chain buys do less repeated work after Buy, and accepted sells update holdings immediately while still distinguishing order acceptance from a verified fill.
+- Base token exits have an additional safety-gated route when the primary venues cannot see an executable market.
+
+### Trading review that stays out of the way
+
+- Trade research, route construction and biometric approval are coordinated into one clear review flow. Higher-risk or unverified tokens still require explicit acceptance, and hard safety blocks remain non-bypassable.
+- Review sheets now transition cleanly into the native approval prompt, with clearer progress from checking and signing through submission and settlement.
+
+### Ethereum cash for card top-ups
+
+- Eligible Ethereum USDC balances now appear alongside other Cash balances when topping up a Karma card.
+- The selected source network stays visible through review, processing and completion, and a top-up only reads as complete after the funding transfer is verified.
+
+### Faster app, charts and profiles
+
+- Face ID unlock now finishes immediately after a successful match and recovers correctly after an app update reload.
+- Charts and sparklines share refresh work more efficiently, while profiles and portfolios load independent data in parallel and remain stable when an unfamiliar network appears.
+- Shared post links open the exact post in Karma when the app is installed, with the web post preserved as the fallback.
+
+### Stronger account protection
+
+- Accounts with two-factor authentication enabled now require the stronger authenticated session across protected app and web surfaces.
+- Additional server-side access controls reduce the scope of account-data writes while leaving normal profile updates in their approved paths.
 
 ### Following stays quiet
 
@@ -17,17 +69,69 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## August 25, 2026
+
+### Advanced chart workspace beta
+
+- The early-access Advanced Chart adds a full-screen trading workspace with line and candle views, technical indicators, drawing tools, personal and community trade overlays, and 1H through ALL ranges.
+- Tapping a trade marker opens the existing Karma trade details, while Buy and Sell continue through the same native review and approval flow.
+- The workspace now preloads after token detail becomes usable and stays inside the app, with a recoverable error state if the chart cannot finish loading.
+
+### A Feed that keeps going
+
+- Feed scrolling now continues beyond the first group of cards, including timelines concentrated around a small number of active accounts.
+- Original posts and reposts retain distinct places in the timeline, older activity continues loading without repeats, and recent Feed content paints faster while a fresh version arrives.
+
+### Follow tracked traders
+
+- Tracked influencer profiles now support Follow, follower counts and optional trade alerts while remaining clearly labelled as tracked public wallets.
+- Follow, request and alert controls respond immediately, then restore their previous state cleanly if the request cannot complete.
+
+### Clearer cash sends
+
+- Cash sends to an external Solana wallet now explain when funds must first move from another network, show progress for each stage and continue safely if the app is backgrounded.
+- Receipts show the amount actually delivered, and an interrupted routing step makes clear that no recipient transfer occurred and the cash remains yours.
+
+### Reliability and privacy fixes
+
+- Trading recovers confirmed orders without leaving the interface stuck, keeps eligible Base sells gasless, and completes full-position sells without a misleading dust quote.
+- Card authorization handling is more resilient during slow issuer responses, reducing false declines while preserving duplicate-event protection.
+- Private-profile balances, holdings and activity remain private when a profile link is opened on the web or unfurled in a chat preview.
+
+---
+
 ## August 24, 2026
+
+### Influencers available to everyone
+
+- **The Influencers board is now available to everyone.** Tracked public wallets remain clearly distinguished from Karma accounts and can appear in holder lists without implying that the wallet owner joined Karma.
+- Tracked Robinhood Chain holdings now include verified wallet assets even when they did not originate from a Karma trade, while incomplete market data stays out of performance claims.
 
 ### Multi-chain influencer portfolios
 
-- Early-access influencer profiles now sync holdings across Solana, Base, Ethereum and Robinhood Chain, making a tracked portfolio useful even before its first observed trade.
+- Influencer profiles now sync holdings across Solana, Base, Ethereum and Robinhood Chain, making a tracked portfolio useful even before its first observed trade.
 - A temporary Solana pricing interruption no longer clears previously synced holdings, while assets without enough market information to value responsibly stay out of the positions shown.
 
 ### Faster large profiles
 
 - Profiles with hundreds of positions remain responsive. The largest holdings appear first, with a **View all** control to expand the list.
 - Position rows avoid unnecessary animation and refresh work when their values have not changed, keeping the rest of the app smooth while a large profile is open.
+
+### Safer, clearer swap amounts
+
+- Preset amounts above the spendable balance are now visibly unavailable, with an explicit insufficient-balance message instead of an unrelated pricing error.
+- Quotes and approvals remain bound to the exact amount, pair, network and slippage currently on screen, and markets with extreme or predatory fees are blocked before signing.
+- Imported-wallet activity is scoped to the wallet and network that actually traded, keeping Bought, Sold and P&L totals from leaking across chains.
+
+### A more responsive app and Feed
+
+- Startup performs less work before the first usable screen, hidden tabs pause unnecessary polling and pull-to-refresh now follows a consistent, bounded lifecycle across the app.
+- Feed paints recent content sooner, defers off-screen work and scrolls more smoothly without sacrificing refresh, pagination or immediate Following navigation.
+
+### Trades that finish in the background
+
+- Accepted orders keep reconciling after you leave the trading screen. Holdings, cash, activity and chart markers update per order, with independent rollback if one of several rapid trades fails.
+- Robinhood Chain charts recover from brief history gaps without replacing a valid recent chart with an empty state.
 
 ---
 
