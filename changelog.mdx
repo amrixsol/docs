@@ -8,6 +8,110 @@ All updates and announcements in one place. We're building towards a community p
 
 ---
 
+## September 3, 2026
+
+### Trading confirmation and safety
+
+- **Face ID for Transactions** is now honored by every trade on the new engine, with exactly one prompt per order and a clean cancel that never shows an error or counts as a failed trade.
+- Selling native ETH on Robinhood Chain now checks your real on-chain balance before you sign, instead of trusting a cached figure.
+- When a trade can't be quoted, the app now shows the actual reason instead of a generic "try a different amount" message.
+- A previous order stuck mid-signing can no longer block a new trade, and a cross-chain buy whose funds were already refunded now closes out automatically instead of sitting unresolved.
+
+### Feed and account fixes
+
+- Fixed a bug where the For You feed would stop loading more posts and never recover. A feed that's genuinely caught up now says so instead of trailing off silently.
+- Fixed the GBP cash-out preview showing the wrong converted amount. It now quotes from the right rate for your selected currency and shows "Rate unavailable" instead of guessing when a rate can't be fetched.
+- The "couldn't verify this token" warning no longer fires on nearly every Robinhood Chain buy. It now reflects genuine safety findings instead of tripping on incomplete provider data.
+
+### Redesigned token page and chart
+
+- New token page layout: a single-row header (avatar, name, ticker, bell, star for watchlist, share), a stats strip for market cap, 24h volume, liquidity and holders, and a line showing how many people on Karma hold the token.
+- New chart with proper axes, live candles that update tick by tick, interval chips from short-term up to daily views, and prices sourced directly from swap activity for faster, more accurate updates.
+- Chart markers are now capped at about ten trade-avatar clusters with the rest shown as small dots, so an active day doesn't flood the chart; tapping a marker still opens the trade.
+- Press-and-hold scrubbing on the chart works reliably again and now shows just the value, change and time.
+- Chart wicks no longer spike from thin, dust-sized trades; a chart's high and low now reflect trades that actually moved the price.
+
+---
+
+## September 2, 2026
+
+### Trading V2 goes live for everyone
+
+- Karma's upgraded trading engine now handles every trade, not just a test group, across Robinhood Chain, Base, Ethereum and Solana.
+- Robinhood Stock Token trades keep routing through their existing dedicated venue, since the new engine doesn't carry those instruments yet.
+- Small trades that were previously refused for costing too much in fees now go through more often. When you cover network cost yourself, Karma's minimum fee on a trade is lower than before, and the price-impact check now looks only at how much a trade moves the pool.
+- On routed trades, network cost is now paid from the trade's own output instead of being covered separately. The confirm screen shows one Network cost line next to Karma's fee, so the full cost is clear before you confirm.
+
+### Robinhood Chain network fee warnings
+
+- When network fees on Robinhood Chain, Base or Ethereum spike, a bar appears on the swap screen, Home and Explore with a live cost estimate for your trade.
+- The bar stays out of the way otherwise, taking no space until fees are actually elevated.
+
+### Faster, calmer swap flow
+
+- Tapping Swap now opens the confirm step immediately with live numbers marked as estimates, while the exact quote finishes loading in the background. A Confirm tap before the quote is ready queues automatically instead of doing nothing.
+- The confirm screen counts down to when your quote refreshes and quietly re-quotes before it expires, instead of bouncing you back to the amount screen.
+- Cost details are simplified to one Network cost row and a clear Karma fee line, and screen transitions are calmer with no bounce.
+
+### Reliability, recovery and rewards
+
+- A cross-chain buy whose second leg couldn't complete right away now gets a longer automatic retry window, and a clear message if your funds landed safely back in Cash.
+- Holdings that were sitting under an older wallet record on some accounts show up again, with a way to move them to your active wallet.
+- The Rewards screen now shows a banner when an active fee-rebate campaign is running, using the campaign rate as your headline rate when it beats your tier.
+
+---
+
+## September 1, 2026
+
+### New trading engine keeps expanding
+
+- The upgraded trading engine, covering Robinhood Chain, Base, Ethereum and Solana trades, rolled out to more accounts, with native SOL and native ETH buys, sells and MAX sells now fully supported.
+- Selling your full SOL or ETH balance no longer leaves a stray dust amount or fails from a stale balance reading.
+- Back-to-back buys on the same token no longer get blocked by leftover state from a previous order.
+- Robinhood Chain quotes now recover automatically instead of failing outright when a route can't be priced for a moment.
+
+### Cleaner sends and balances
+
+- Sending from an Ethereum wallet now shows the balance for the wallet you're actually sending from, not a different one.
+- Pasting a token contract address now resolves it on the correct network.
+- A fully sold position no longer leaves a zero-value row behind on Home.
+
+### Trading accuracy
+
+- Trade confirmations now show the correct settlement network.
+- **Rewards** fee savings are now credited correctly for trades made on the new engine.
+- Leaderboard P&L no longer gets inflated by thinly traded, near-empty pools.
+- Tokens with unusual symbols or punctuation in their ticker can now be sold without error.
+
+---
+
+## August 31, 2026
+
+### New trading engine begins reaching more accounts
+
+- Robinhood Chain and Base trades began routing through Karma's upgraded trading engine for an initial set of accounts, with clearer in-progress trade states and faster order acknowledgement.
+- Ethereum token sells stay gasless on the new engine, the same as before.
+- Trades show a successful state faster while final settlement continues in the background, extending the **Order placed** behavior from earlier releases.
+
+### Clearer prices and holdings
+
+- Swap screens show a live market estimate that updates as you type.
+- USDG balances now appear correctly among your holdings, and Robinhood Chain KARMA holdings no longer get miscategorized as dust and hidden from your portfolio.
+
+### Search redesign
+
+- Search across Karma has been redesigned and reindexed for faster, more relevant results.
+
+### Refreshed home wallet
+
+- The wallet section on Home got a visual refresh.
+
+### Clearer sends
+
+- A send that's waiting on its gas to be sponsored now shows a clear status instead of appearing stuck or stale.
+
+---
+
 ## August 30, 2026
 
 ### $KARMA benefits activate immediately
@@ -15,6 +119,11 @@ All updates and announcements in one place. We're building towards a community p
 - A newly acquired \$KARMA holding now unlocks its matching rebate and KP multiplier tier as soon as its current value reaches the threshold—there is no seven-day qualification wait.
 - Once earned, a tier remains protected from price declines while you keep the recorded qualifying token amount. Selling or transferring below it recalculates the best tier supported by the remaining holding.
 - The Rewards screen and swap preparation now check current on-chain holdings, and incomplete wallet reads preserve the last verified tier instead of treating a temporary network issue as a sale.
+
+### One activity feed for your whole account
+
+- A new Activity view brings together wallet transactions, card charges and account deposits in one timeline, instead of scattering them across separate screens.
+- The timeline reflects your on-chain and card activity as it settles, so recent transfers, swaps and top-ups show up without checking the wallet, cards and history views separately.
 
 ---
 
