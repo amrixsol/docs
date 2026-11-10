@@ -38,7 +38,8 @@
         "pages": [
           "what-is-karma",
           "why-did-we-build-this",
-          "features"
+          "features",
+          "card-programme-closure"
         ]
       },
       {
@@ -115,7 +116,7 @@
     "primary": {
       "type": "button",
       "label": "Download App",
-      "href": "https://apps.apple.com/us/app/karma-crypto-card-wallet/id6758009320"
+      "href": "https://apps.apple.com/app/id6758009320"
     }
   },
   "footer": {
