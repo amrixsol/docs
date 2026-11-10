@@ -1,21 +1,32 @@
 ---
 title: "Processing windows & cutoff times"
 sidebarTitle: "Processing & cutoff times"
-description: "Banking-day access windows and settlement expectations for fiat rails"
+description: "Cutoff times and settlement speeds for onramps and offramps across fiat and crypto rails"
 ---
 
-## Fiat rails
+Bridge accesses fiat rails on banking days and during banking hours and crypto rails 24/7/365. Refer to the table below for cutoff times and settlement speeds for offramp and onramp processing across fiat and crypto rails. Transactions which miss the cutoff will be processed the following day.
 
-We access fiat rails on banking days during banking hours. Cutoffs and typical settlement times for payouts to your bank:
+**Note**:
 
-| Currency | Rail | Cutoff (ET) | Settlement time | Notes |
-| :-- | :-- | :-- | :-- | :-- |
-| USD | Next Day ACH | 4:45 PM | 8:30 AM next business day | Batches are submitted each evening on banking days. Transfers after the cutoff are processed the next banking day; funds typically land in 1–2 business days. |
-| USD | Same Day ACH | 9:30 AM, 1:45 PM, 2:30 PM | 1:00 PM, 5:00 PM, 6:00 PM same day | Per-transaction limit of 1,000,000 USD. Same-day availability depends on the receiving bank; if unavailable, the transfer is rerouted via Next Day ACH. |
-| USD | Wire | 4:45 PM | Up to 2 hours | Transactions after 4:45 PM ET are sent the next banking day. |
-| EUR | SEPA Instant | N/A | Up to 5 minutes | Available 24/7/365 for transactions up to 1,000,000 EUR. Requires beneficiary bank support. |
-| EUR | SEPA Credit | 7:00 AM | 1–3 business days | Used for transactions over 1,000,000 EUR or when SEPA Instant is unavailable. |
+1. Large transactions (over \$500,000) will take no more than one additional hour to process, across all supported payment rails.
+2. Onramps may be subject to additional risk reviews (in the “`In Review`” state) which may add two additional business hours to processing times.
 
-## Onramps (fiat to crypto)
+| **Destination Currency** | **Destination Rail** | **Cutoff (ET)** | **Settlement Time** | **Notes** |
+| :- | :- | :- | :- | :- |
+| **USD** | **Next Day ACH** | 4:45 PM | 8:30 AM next business day | Bridge submits batches in the evening each banking day. Transactions submitted post-cutoff may take an additional 1 day to process. ACH funds typically land in 1–2 **banking** days. |
+| **USD** | **Same Day ACH** | 9:30 AM, 1:45 PM, 2:30 PM | 1:00 PM, 5:00 PM, 6:00 PM same day | Please note the same day ACH transaction **limit is \$1 million** and availability depends on the recipient bank. If same day ACH isn't an option, the transaction will be rerouted via next day ACH.  Transactions submitted before 2:30 PM on a business day are guaranteed to settle same day. Transactions submitted after 2:30 PM or on non-business days are guaranteed to settle the next business day. |
+| **USD** | **Wire** | 4:45 PM | Up to 2 hours after sending | Transactions after 4:45 PM ET are sent **next banking day.** Please note that receiving banks may process wires at their own speed. |
+| **USD** | **FedNow** | N/A | Up to 20 seconds after sending | 24/7/365, with no cutoffs. Settlement time is measured from when Bridge submits the payment to the FedNow network; Bridge processing (e.g. internal transfers and risk screening) happens before submission and is not included. The **recipient bank must support FedNow** — check `payment_rails.supported` on the external account before sending. FedNow offramps are currently in **beta**; access is by invitation. |
+| **EUR** | **SEPA Instant** | N/A | Up to 5 minutes | SEPA Instant payments are available **24/7/365. Bridge supports SEPA Instant transactions up to €1 million**; however, the **beneficiary bank must also support SEPA Instant** and may apply its own transaction limits.   If the beneficiary bank does not respond in time to the SEPA Instant request, the payment will automatically be rerouted as a standard SEPA Credit Transfer. |
+| **EUR** | **SEPA Credit** | 7:00 AM | 1–3 business days | Used for transactions > **€1 million** or **for payments where SEPA instant is not available** (see above). |
+| **MXN** | **SPEI** | N/A | Up to 30 minutes | 24/7/365. Always-on domestic rail in Mexico. |
+| **BRL** | **PIX** | N/A | Up to 30 minutes | 24/7/365. Always-on domestic rail in Brazil. |
+| **COP** | **Bre-B** | N/A | Up to 30 minutes | 24/7/365. Always-on domestic rail in Colombia. |
+| **COP** | **Bank Transfer** | 11:30 AM, 2:00 PM, and 4:30 PM | Up to 30 minutes from cutoff time. | Completed during weekdays. Domestic rail in Colombia. |
+| **GBP** | **Faster Payments** | N/A | Up to 30 minutes\* | 24/7/365. Always-on domestic rail in the United Kingdom. \*Transfers >£1M will process via BACS rail, completing in up to 3 business days. |
+| **USDT** | **All chains** | N/A | Up to 60 minutes | 24/7/365. Unlike other supported stablecoins, USDT does not convert at a 1:1 peg with USD, and must be traded. Transaction speed is slower than other stablecoins to account for trading. |
+| **USDC** **EURC** | **All chains** | N/A | Up to 30 minutes | 24/7/365 |
+| **Bridge-issued stablecoin (e.g. USDB, xUSD)** | **All chains** | N/A | Up to 30 minutes | 24/7/365 |
+| **Non-stablecoin** | **All chains** | N/A | Up to 60 minutes | 24/7/365. Transaction speed is slower than other assets to account for trading. |
 
-Crypto is typically sent within minutes of fiat landing in our bank account.
+Source: [Bridge — Processing windows & cutoff times](https://apidocs.bridge.xyz/platform/orchestration/more/cutoffs).
